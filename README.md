@@ -28,7 +28,6 @@ A curated list of Catholic projects, libraries, software and websites.
 - [liturgia-diaria](https://github.com/Dancrf/liturgia-diaria) - An API for the daily readings in Portuguese.
 - [Biblia-Sacra-Vulgata](https://github.com/aseemsavio/Biblia-Sacra-Vulgata) - Biblia Sacra Vulgata is a RESTful API project primarily serving the Original Latin Vulgate ( ✝️ Biblia Sacra Vulgata) and its English Translation - Catholic Public Domain Version (CPDV) with study notes.
 - [MotivationalAPI](https://github.com/GomezMig03/MotivationalAPI) - Help people overcome their problems with catholic and secular motivational phrases.
-- [matosSoaresBibliaApi](https://github.com/edsonbittencourt/matosSoaresBibliaApi) - API to access verses from the Vulgate Sisto-Clementina translated by Father Matos Soares into Portuguese.
 - ![Python](https://img.shields.io/badge/language-Python-blue) [missal-1962](https://github.com/mmolenda/Missal1962) - Python/Flask API, serving calendar and propers for a given day, and Bootstrap UI consuming and presenting the data.
 
 ## Apps
@@ -40,6 +39,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [DinDonDan](https://dindondan.app/) - Mass times app, both for web and mobile ([Google Play](https://play.google.com/store/apps/details?id=com.dindondan), [App Store](https://apps.apple.com/app/dindondan/id1437269265)).
 - [Evangelizo](https://www.evangelizo.org/) - provides the daily Gospel readings, prayers, and information about saints online and through an app. Available in many different languages.
 - [Holy Habits](https://holyhabits.app/) - offers a simple and intuitive way to build habits that actually lead you closer to God, individually, or with friends.
+- [Biblia Matos Soares](https://play.google.com/store/apps/details?id=br.com.hansmboron.biblia_ms&pcampaignid=web_share) - Bible app for Android, presents the famous portuguese translation of the Holy Scriptures by Father Manuel de Matos Soares from 1956, his last revision before his death.
 
 ## Mobile-Apps
 
@@ -82,6 +82,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [doctors of the church](https://github.com/masaharumori7/doctors-of-the-church) - A gallery list of all 37 Doctors of the Church with descriptions and notable works.
 - [GregoSearch](https://busca.liturgiacantada.com.br) - A modern and powerful search interface for GregoBase, one of the largest databases of Gregorian chant scores.
 - [JGABC Chant Tools](https://bbloomf.github.io/jgabc/transcriber.html) - Tools for gregorian chants, including mass propers.
+- [Devocionario](https://www.devocionario.app/) - Catholic website in portuguese that provides daily readings and prayers.
 
 ## AI Tools
 
@@ -129,6 +130,9 @@ intended for scholars, teachers, students, pastors, believers, seekers, and othe
 - ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) [romcal](https://github.com/romcal/romcal) - The Liturgical Calendar used by the Roman Rite (Western Church) for Node JS v6 and above.
 - ![PHP](https://img.shields.io/badge/language-PHP-blue) [roman calendar](https://github.com/jayarathina/Roman-Calendar) - Roman Catholic Liturgical Calendar Generator
 - ![TEX](https://img.shields.io/badge/language-TEX-green) [graduale-romanum-1908](https://github.com/ahinkley/graduale-romanum-1908) - 1908 Vatican Edition Graduale Romanum retypeset in Gregorio 4
+- ![TEX](https://img.shields.io/badge/language-TEX-green) [filipelbc/rosario](https://github.com/filipelbc/rosario) - booklet to assist in praying the rosary
+- ![Powershell](https://img.shields.io/badge/language-Powershell-blue) [Documentos Catolicos](https://github.com/zcla/doccat) - a collection of various Catholic resources, using PowerShell scripts to generate the archive
+- ![Python](https://img.shields.io/badge/language-Python-blue) [edsonbittencourt/tesourofieis](https://github.com/edsonbittencourt/tesourofieis) - Space dedicated to prayer, exhibition and preservation of the holy traditions of the Catholic Church.
 
 ## Hardware
 
