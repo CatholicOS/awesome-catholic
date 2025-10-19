@@ -38,6 +38,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [ParishSOFT](https://www.parishsoft.com/) - all-in-one Parish management platform by [Ministry Brands](https://ministrybrands.com/ "We provide transformative technology and services that enable mission-focused organizations to grow, protect, and engage their communities.")
 - [Vinly.co - We are Catholic](https://vinly.co/o/catholic) - AI-powered community building platform. Conversations that matter. Vinly helps you create focused communities where trusted, high-signal conversations lead to real outcomes and connections.
 - [DinDonDan](https://dindondan.app/) - Mass times app, both for web and mobile ([Google Play](https://play.google.com/store/apps/details?id=com.dindondan), [App Store](https://apps.apple.com/app/dindondan/id1437269265)).
+- [Evangelizo](https://www.evangelizo.org/) - provides the daily Gospel readings, prayers, and information about saints online and through an app. Available in many different languages.
 
 ## Mobile-Apps
 
