@@ -83,6 +83,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [GregoSearch](https://busca.liturgiacantada.com.br) - A modern and powerful search interface for GregoBase, one of the largest databases of Gregorian chant scores.
 - [JGABC Chant Tools](https://bbloomf.github.io/jgabc/transcriber.html) - Tools for gregorian chants, including mass propers.
 - [Devocionario](https://www.devocionario.app/) - Catholic website in portuguese that provides daily readings and prayers.
+- [PP Devocionario](https://github.com/augustooomoraes/pp-devocionario) - web app with gregorian chants and devotional prayers in portuguese.
 
 ## AI Tools
 
