@@ -52,6 +52,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [Prayer Book](https://codeberg.org/jozo/prayer-book) - mobile app with catholic prayers
 - [Rosarium](https://codeberg.org/Krixec/Rosarium) - multilingual rosary app
 - [Hallow](https://hallow.com/) - A Catholic prayer app for iOS and Android.
+- [BibleGPT](https://biblegpt-la.com/) - An AI-powered Bible app for iOS and Android, curated by [Mount Olive Academy](https://mountoliveacademy.org/).
 
 ## Web-Apps
 
