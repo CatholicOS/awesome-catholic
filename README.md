@@ -134,6 +134,7 @@ intended for scholars, teachers, students, pastors, believers, seekers, and othe
 - ![TEX](https://img.shields.io/badge/language-TEX-green) [filipelbc/rosario](https://github.com/filipelbc/rosario) - booklet to assist in praying the rosary
 - ![Powershell](https://img.shields.io/badge/language-Powershell-blue) [Documentos Catolicos](https://github.com/zcla/doccat) - a collection of various Catholic resources, using PowerShell scripts to generate the archive
 - ![Python](https://img.shields.io/badge/language-Python-blue) [edsonbittencourt/tesourofieis](https://github.com/edsonbittencourt/tesourofieis) - Space dedicated to prayer, exhibition and preservation of the holy traditions of the Catholic Church.
+- ![JSON](https://img.shields.io/badge/language-JSON-yellow) [codexcommunion/prayer-collection](https://github.com/codexcommunion/prayer-collection) - A comprehensive collection of traditional Roman Catholic prayers in multiple languages, organized as structured JSON files.
 
 ## Hardware
 
