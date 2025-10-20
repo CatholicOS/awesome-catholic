@@ -23,12 +23,13 @@ A curated list of Catholic projects, libraries, software and websites.
 - ![PHP](https://img.shields.io/badge/language-PHP-blue) [geomesse-api](https://github.com/carpedeum-fr/geomesse-api) - Get mass time in your country
 - ![PHP](https://img.shields.io/badge/language-PHP-blue) [tamil-bible-database](https://github.com/jayarathina/Tamil-Bible-Database) - Tamil Bible Database in MySQL with PHP API
 - ![Ruby](https://img.shields.io/badge/language-Ruby-purple) [church-calendar-api](https://github.com/igneus/church-calendar-api) - RESTful API providing Roman Catholic church calendar data for your apps
-- ![PHP](https://img.shields.io/badge/language-PHP-blue) [Liturgical Calendar](https://github.com/JohnRDOrazio/LiturgicalCalendar) - A PHP script that will generate the liturgical calendar for any given year, based on the General Roman Calendar, calculating the mobile festivities and the precedence of solemnities, feasts, and memorials.
+- ![PHP](https://img.shields.io/badge/language-PHP-blue) [Liturgical Calendar](https://github.com/Liturgical-Calendar/LiturgicalCalendarAPI) - A RESTful API that generates the liturgical calendar for any given year, based on the General Roman Calendar, calculating the mobile festivities and the precedence of solemnities, feasts, and memorials; adaptable to nations and dioceses. A few examples of implementation and client libraries are also provided.
 - [AELF](https://api.aelf.org/) - A French API for the Liturgy of the Hours.
 - [liturgia-diaria](https://github.com/Dancrf/liturgia-diaria) - An API for the daily readings in Portuguese.
 - [Biblia-Sacra-Vulgata](https://github.com/aseemsavio/Biblia-Sacra-Vulgata) - Biblia Sacra Vulgata is a RESTful API project primarily serving the Original Latin Vulgate ( ✝️ Biblia Sacra Vulgata) and its English Translation - Catholic Public Domain Version (CPDV) with study notes.
 - [MotivationalAPI](https://github.com/GomezMig03/MotivationalAPI) - Help people overcome their problems with catholic and secular motivational phrases.
 - ![Python](https://img.shields.io/badge/language-Python-blue) [missal-1962](https://github.com/mmolenda/Missal1962) - Python/Flask API, serving calendar and propers for a given day, and Bootstrap UI consuming and presenting the data.
+- ![PHP](https://img.shields.io/badge/language-PHP-blue) [BibleGet](https://github.com/BibleGet-I-O/endpoint) - An API for retrieving Bible passages from various editions of the Bible (first and foremost Catholic editions). Various client applications are available too.
 
 ## Apps
 
