@@ -57,7 +57,7 @@ A curated list of Catholic projects, libraries, software and websites.
 ## Web-Apps
 
 - ![HTML](https://img.shields.io/badge/language-HTML-green) [missal.io](https://github.com/benyanke/missal.io) - A Catholic Sunday hand missal web app for the Traditional Latin Mass
-- ![HTML](https://img.shields.io/badge/language-HTML-green) [Catholic Daily Readings](https://github.com/tbaba007/ReactJs-Catholic-Daily-Readings-Integration-EWTN) - Fetches Daily Mass Readings from EWTN API, Daily Catholic Prayers and Know your Faith; includes Catholic prayers.
+- ![ReactJS](https://img.shields.io/badge/language-ReactJS-yellow) [Catholic Daily Readings](https://github.com/tbaba007/CatholicDaily) - Daily Mass Readings, Daily Catholic Prayers and Know your Faith.
 - ![Python](https://img.shields.io/badge/language-Python-blue) [theocrone](https://github.com/paucazou/theochrone) - A calendar for the Tridentine rite. Demo at [theocrone.fr](http://theochrone.fr)
 - ![PWA](https://img.shields.io/badge/Progressive-WebApp-yellow) [Easter dates](https://easter-dates.gavinr.com/) - Distribution of Easter per Date Across Years, visualized.
 - ![PWA](https://img.shields.io/badge/Progressive-WebApp-yellow) [Confessit](https://github.com/kas-catholic/confessit-web) - A progressive web app designed to help Roman Catholics prepare for the sacrament of confession by examining their conscience.
@@ -95,7 +95,7 @@ A curated list of Catholic projects, libraries, software and websites.
 
 ## Websites
 
-- ![HTML](https://img.shields.io/badge/language-HTML-green) [QUMRAN NET](https://www.qumran2.net/) - A Catholic Sunday hand missal web app for the Traditional Latin Mass
+- ![HTML](https://img.shields.io/badge/language-HTML-green) [QUMRAN NET](https://www.qumran2.net/) - online database of materials for Catholic pastoral care in Italian
 - ![MediaWiki](https://img.shields.io/badge/language-MediaWiki-blue) [Cathopedia](https://it.cathopedia.org/) - Cathopedia aims to raise awareness of the Catholic religion. The entries have a theological, yet pastoral and understandable tone, from a Catholic perspective, in fidelity to the Magisterium of the Church.
 - [Santi e beati](https://www.santiebeati.it/) - A website about saints and martyrs.
 - [GCatholic.org](https://gcatholic.org/) - A website with a slew of information about the Catholic Church and its institutions, hierarchy, liturgy, etc.
