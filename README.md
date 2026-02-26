@@ -102,6 +102,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [Catholic Resources](https://catholic-resources.org/) - contains a variety of materials, mostly related to biblical and liturgical studies,
 intended for scholars, teachers, students, pastors, believers, seekers, and others interested in the Catholic faith.
 - [Siti Cattolici](https://www.siticattolici.it/) - contains information about Catholic websites in Italy
+- [Miracle's List](https://www.miracolieucaristici.org/en/Liste/list.html) - St. Carlo's website cataloguing the world's Eucharistic miracles.
 
 ## Command Line
 
