@@ -52,3 +52,56 @@ liturgia das horas
 # --- French ---
 liturgie catholique
 liturgie des heures
+
+# --- German (Germany, Austria, Switzerland) ---
+katholisch
+Rosenkranz
+Stundengebet
+
+# --- Polish (Poland) ---
+katolicki
+różaniec
+brewiarz
+liturgia godzin
+
+# --- Filipino / Tagalog (Philippines) ---
+# Most Filipino Catholic projects are in English; these are the terms that hit.
+Katoliko
+panalangin
+
+# --- Croatian (Croatia) ---
+katolički
+krunica
+
+# --- Czech (Czechia) ---
+katolický
+růženec
+
+# --- Slovak (Slovakia) ---
+katolícky
+ruženec
+
+# --- Hungarian (Hungary) ---
+katolikus
+rózsafüzér
+
+# --- Lithuanian (Lithuania) ---
+katalikiškas
+rožinis
+
+# --- Vietnamese (Vietnam) ---
+Công giáo
+Kinh Mân Côi
+
+# --- Korean (South Korea) ---
+천주교
+묵주기도
+
+# --- Indian languages (Kerala, Goa, Tamil Nadu) ---
+# Note: Devanagari/Malayalam-script results on GitHub are sparse — most Indian
+# Catholic projects use English — but these cost little and occasionally hit.
+कैथोलिक
+കത്തോലിക്ക
+
+# --- Swahili (East Africa: Tanzania, Kenya, Uganda, DR Congo) ---
+Katoliki
