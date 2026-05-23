@@ -93,6 +93,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [Truthly](https://truthly.ai/) - Catholic AI app designed to empower people with instant, reliable Catholic answers to questions about the faith and life.
 - [Homily.build](https://homily.build/) - The comprehensive platform for Catholic preachers to create contextual, high-quality homilies efficiently across different audiences and settings.
 - [SpiriTools](https://github.com/adicatho/spiritools) - An open-source, fully offline AI theological assistant for Catholics (by ADIC), grounded in Scripture, scholastic theology and magisterial texts — the digital successor to Ictus Win / Biblia Clerus.
+- [Catholic AI](https://www.catholicai.app/) - AI app offering faithful answers rooted in Catholic teaching, with Bible chat, theologian commentary, and Rosary guides.
 
 ## Websites
 
