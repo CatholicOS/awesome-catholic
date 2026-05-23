@@ -6,13 +6,14 @@ linked from ``README.md`` *or* already proposed in an open pull request,
 applies basic quality filters (stars, recency, archived/fork status), and
 prints the remaining candidates as a Markdown review list or as JSON.
 
-Requires the GitHub CLI (`gh`) to be installed and authenticated. `gh` reads
-GH_TOKEN / GITHUB_TOKEN from the environment, so this works unattended (e.g. in
-a CI or remote-agent environment) as long as a token is present.
+Talks to the GitHub REST API directly (no `gh` CLI dependency), so it runs
+anywhere Python does — locally or in a sandboxed agent environment. It reads a
+token from ``GH_TOKEN`` or ``GITHUB_TOKEN``; authentication is required because
+the unauthenticated search API is rate-limited to 10 requests/minute.
 
 Exit codes:
     0  success
-    1  fatal error (missing/unauthenticated gh, missing input files)
+    1  fatal error (no/invalid token, missing input files)
     2  partial run: one or more searches failed (e.g. rate limiting); the
        printed results may be incomplete
 
@@ -27,16 +28,22 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import subprocess
 import sys
 import time
+import urllib.error
+import urllib.parse
+import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_README = REPO_ROOT / "README.md"
 DEFAULT_KEYWORDS = Path(__file__).resolve().parent / "keywords.txt"
+
+API_ROOT = "https://api.github.com"
 
 # Matches the owner/repo of any github.com link, ignoring the scheme and any
 # trailing path, query string, ".git" suffix or punctuation.
@@ -48,14 +55,38 @@ GH_LINK_RE = re.compile(
 NON_REPO_OWNERS = {"topics", "sponsors", "marketplace", "features", "about",
                    "settings", "orgs", "users", "search"}
 
-# JSON fields requested from `gh search repos`. `pushedAt` reflects real code
-# activity (last push), unlike `updatedAt` which also moves on metadata changes
-# such as a new star or an edited description.
-GH_FIELDS = "fullName,description,stargazersCount,pushedAt,updatedAt,language,url,isArchived,isFork"
-
 # GitHub's authenticated search API allows ~30 requests/minute; pause between
 # queries so a full keyword sweep stays comfortably under that ceiling.
 DEFAULT_SLEEP = 2.5
+
+# REST `sort` values differ slightly from the gh CLI's; "best-match" means
+# "omit the sort parameter".
+SORT_PARAM = {"stars": "stars", "forks": "forks", "updated": "updated",
+              "best-match": ""}
+
+
+def token() -> str | None:
+    return os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+
+
+def api_get(path: str, params: dict | None = None,
+            accept: str = "application/vnd.github+json") -> object:
+    """GET a GitHub REST endpoint and return the parsed JSON.
+
+    Raises urllib.error.HTTPError / URLError on failure.
+    """
+    url = API_ROOT + path
+    if params:
+        url += "?" + urllib.parse.urlencode(params)
+    req = urllib.request.Request(url)
+    req.add_header("Accept", accept)
+    req.add_header("X-GitHub-Api-Version", "2022-11-28")
+    req.add_header("User-Agent", "awesome-catholic-discover")
+    tok = token()
+    if tok:
+        req.add_header("Authorization", f"Bearer {tok}")
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        return json.loads(resp.read().decode("utf-8"))
 
 
 def load_keywords(path: Path) -> list[str]:
@@ -94,80 +125,111 @@ def repos_in_text(text: str, plus_only: bool = False) -> set[str]:
     return found
 
 
-def ensure_gh_auth() -> None:
-    """Exit with a clear message unless `gh` is installed and authenticated."""
-    try:
-        proc = subprocess.run(
-            ["gh", "auth", "status"], capture_output=True, text=True, timeout=20
-        )
-    except FileNotFoundError:
-        sys.exit("error: the GitHub CLI (`gh`) is not installed or not on PATH.")
-    except subprocess.TimeoutExpired:
-        sys.exit("error: `gh auth status` timed out.")
-    if proc.returncode != 0:
+def ensure_auth() -> None:
+    """Exit unless a usable GitHub token is present."""
+    if not token():
         sys.exit(
-            "error: `gh` is not authenticated. Set GH_TOKEN/GITHUB_TOKEN in the "
-            "environment or run `gh auth login`.\n" + proc.stderr.strip()
+            "error: no GitHub token found. Set GH_TOKEN or GITHUB_TOKEN — the "
+            "REST search API requires authentication."
         )
+    try:
+        api_get("/rate_limit")
+    except urllib.error.HTTPError as exc:
+        if exc.code in (401, 403):
+            sys.exit("error: GitHub token was rejected (HTTP "
+                     f"{exc.code}). Check GH_TOKEN/GITHUB_TOKEN.")
+    except urllib.error.URLError:
+        pass  # transient network issue; let the real queries surface it
 
 
-def gh_search(query: str, limit: int, sort: str) -> tuple[list[dict], str | None]:
-    """Run one `gh search repos` query.
+def normalize_item(item: dict) -> dict:
+    """Map a REST search-result item to the stable shape the rest of the
+    script (and the JSON consumed by the agent) expects."""
+    return {
+        "fullName": item.get("full_name", ""),
+        "description": item.get("description"),
+        "stargazersCount": item.get("stargazers_count", 0),
+        "pushedAt": item.get("pushed_at", ""),
+        "updatedAt": item.get("updated_at", ""),
+        "language": item.get("language"),
+        "url": item.get("html_url", ""),
+        "isArchived": item.get("archived", False),
+        "isFork": item.get("fork", False),
+    }
+
+
+def search_repos(query: str, limit: int, sort: str) -> tuple[list[dict], str | None]:
+    """Run one repository search.
 
     Returns ``(results, error)`` where ``error`` is ``None`` on success or a
     short message describing why the query produced no usable output.
     """
-    cmd = [
-        "gh", "search", "repos", query,
-        "--limit", str(limit),
-        "--sort", sort,
-        "--json", GH_FIELDS,
-    ]
+    params = {"q": query, "order": "desc", "per_page": str(min(limit, 100))}
+    sort_value = SORT_PARAM.get(sort, "stars")
+    if sort_value:
+        params["sort"] = sort_value
     try:
-        proc = subprocess.run(
-            cmd, capture_output=True, text=True, check=True, timeout=60
-        )
-    except FileNotFoundError:
-        sys.exit("error: the GitHub CLI (`gh`) is not installed or not on PATH.")
-    except subprocess.TimeoutExpired:
-        return [], f"query timed out: {query!r}"
-    except subprocess.CalledProcessError as exc:
-        return [], f"query failed ({query!r}): {exc.stderr.strip()}"
-    try:
-        return json.loads(proc.stdout or "[]"), None
-    except json.JSONDecodeError:
-        return [], f"unparseable response for query {query!r}"
+        data = api_get("/search/repositories", params)
+    except urllib.error.HTTPError as exc:
+        detail = ""
+        try:
+            detail = json.loads(exc.read().decode("utf-8")).get("message", "")
+        except Exception:
+            pass
+        return [], f"query failed ({query!r}): HTTP {exc.code} {detail}".strip()
+    except urllib.error.URLError as exc:
+        return [], f"query failed ({query!r}): {exc.reason}"
+    except (TimeoutError, json.JSONDecodeError) as exc:
+        return [], f"query failed ({query!r}): {exc}"
+    items = data.get("items", []) if isinstance(data, dict) else []
+    return [normalize_item(it) for it in items], None
 
 
-def open_pr_repos() -> set[str]:
+def detect_repo() -> str | None:
+    """Best-effort ``owner/repo`` for the current checkout."""
+    env = os.environ.get("GITHUB_REPOSITORY", "")
+    if "/" in env:
+        return env.strip()
+    try:
+        url = subprocess.run(
+            ["git", "config", "--get", "remote.origin.url"],
+            capture_output=True, text=True, check=True, timeout=15,
+        ).stdout.strip()
+    except (subprocess.SubprocessError, FileNotFoundError):
+        return None
+    match = re.search(r"github\.com[:/](.+?)(?:\.git)?$", url)
+    return match.group(1) if match else None
+
+
+def open_pr_repos(repo: str | None) -> set[str]:
     """``owner/repo`` links already proposed (added) in any open pull request.
 
     Scanning open PRs prevents re-suggesting a project whose adding PR has not
     been merged yet — without this, every run until merge would stack a
     duplicate PR for the same find.
     """
+    if not repo:
+        return set()
     try:
-        listing = subprocess.run(
-            ["gh", "pr", "list", "--state", "open", "--json", "number", "--limit", "100"],
-            capture_output=True, text=True, check=True, timeout=30,
-        )
-        prs = json.loads(listing.stdout or "[]")
-    except (subprocess.SubprocessError, FileNotFoundError, json.JSONDecodeError):
+        pulls = api_get(f"/repos/{repo}/pulls", {"state": "open", "per_page": "100"})
+    except (urllib.error.URLError, json.JSONDecodeError):
+        return set()
+    if not isinstance(pulls, list):
         return set()
 
     found: set[str] = set()
-    for pr in prs:
+    for pr in pulls:
         number = pr.get("number")
         if number is None:
             continue
         try:
-            diff = subprocess.run(
-                ["gh", "pr", "diff", str(number)],
-                capture_output=True, text=True, check=True, timeout=30,
-            )
-        except subprocess.SubprocessError:
+            files = api_get(f"/repos/{repo}/pulls/{number}/files", {"per_page": "100"})
+        except (urllib.error.URLError, json.JSONDecodeError):
             continue
-        found |= repos_in_text(diff.stdout, plus_only=True)
+        if not isinstance(files, list):
+            continue
+        for f in files:
+            found |= repos_in_text(f.get("patch") or "", plus_only=True)
     return found
 
 
@@ -175,7 +237,7 @@ def parse_ts(value: str) -> datetime | None:
     if not value:
         return None
     try:
-        # gh returns RFC3339 timestamps, e.g. "2025-12-10T08:30:00Z".
+        # GitHub returns RFC3339 timestamps, e.g. "2025-12-10T08:30:00Z".
         return datetime.fromisoformat(value.replace("Z", "+00:00"))
     except ValueError:
         return None
@@ -185,7 +247,7 @@ def discover(args: argparse.Namespace) -> tuple[list[dict], list[str]]:
     keywords = load_keywords(args.keywords)
     already = repos_in_text(args.readme.read_text(encoding="utf-8"))
     if args.exclude_open_prs:
-        already |= open_pr_repos()
+        already |= open_pr_repos(detect_repo())
     cutoff = datetime.now(timezone.utc) - timedelta(days=30 * args.inactive_months)
 
     candidates: dict[str, dict] = {}
@@ -195,7 +257,7 @@ def discover(args: argparse.Namespace) -> tuple[list[dict], list[str]]:
             print(f"searching: {query}", file=sys.stderr)
         if i:
             time.sleep(args.sleep)  # stay under the search-API rate limit
-        results, error = gh_search(query, args.limit, args.sort)
+        results, error = search_repos(query, args.limit, args.sort)
         if error:
             errors.append(error)
             print(f"  warning: {error}", file=sys.stderr)
@@ -261,10 +323,9 @@ def main() -> None:
     parser.add_argument("--keywords", type=Path, default=DEFAULT_KEYWORDS,
                         help="path to the keywords file")
     parser.add_argument("--limit", type=int, default=40,
-                        help="max results per query (default: 40)")
-    parser.add_argument("--sort", choices=["stars", "updated", "forks", "best-match"],
-                        default="stars",
-                        help="how `gh` ranks each query's results (default: stars)")
+                        help="max results per query, 1-100 (default: 40)")
+    parser.add_argument("--sort", choices=list(SORT_PARAM), default="stars",
+                        help="how results are ranked per query (default: stars)")
     parser.add_argument("--min-stars", type=int, default=2,
                         help="minimum stars to include (default: 2)")
     parser.add_argument("--inactive-months", type=int, default=24,
@@ -289,7 +350,7 @@ def main() -> None:
     if not args.keywords.exists():
         sys.exit(f"error: keywords file not found at {args.keywords}")
 
-    ensure_gh_auth()
+    ensure_auth()
 
     results, errors = discover(args)
 

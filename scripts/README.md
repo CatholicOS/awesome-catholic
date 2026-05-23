@@ -10,9 +10,11 @@ candidates for review.
 
 ### Requirements
 
-- [GitHub CLI](https://cli.github.com/) (`gh`) installed and authenticated
-  (`gh auth status` should show you logged in).
-- Python 3.10+.
+- Python 3.10+ (standard library only — no third-party packages, no `gh` CLI).
+- A GitHub token in `GH_TOKEN` or `GITHUB_TOKEN`. Any token works for searching
+  public repos; the unauthenticated search API is too rate-limited (10 req/min)
+  to use. Locally you can do `export GH_TOKEN=$(gh auth token)` if you have the
+  CLI, or use a fine-grained PAT.
 
 ### Usage
 
@@ -34,10 +36,10 @@ Run `./scripts/discover.py --help` for the full set of options.
 
 ### Authentication
 
-`gh` must be authenticated. It reads `GH_TOKEN` / `GITHUB_TOKEN` from the
-environment, so the script also runs unattended (CI, remote agents) wherever a
-token is present — no separate API key. The script preflight-checks auth and
-exits with a clear message if it's missing.
+The script calls the GitHub REST API directly and reads its token from
+`GH_TOKEN` / `GITHUB_TOKEN`, so it runs unattended (CI, remote agents) wherever
+a token is present — no `gh` CLI required. It preflight-checks the token
+(`GET /rate_limit`) and exits with a clear message if it's missing or rejected.
 
 ### Dedup & exit codes
 
