@@ -92,6 +92,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - ![Magisterium](https://img.shields.io/badge/AI-Magisterium-blue) [Magisterium AI](https://www.magisterium.com/) - Magisterium AI taps into a vast database of Church documents utilizing advanced tools to deliver trustworthy answers rooted in Catholic tradition and the Catholic Church's teachings.
 - ![Truthly](https://img.shields.io/badge/AI-Truthly-blue) [Truthly](https://truthly.ai/) - Catholic AI app designed to empower people with instant, reliable Catholic answers to questions about the faith and life.
 - ![Homily.build](https://img.shields.io/badge/AI-Homily.build-blue) [Homily.build](https://homily.build/) - The comprehensive platform for Catholic preachers to create contextual, high-quality homilies efficiently across different audiences and settings.
+- ![SpiriTools](https://img.shields.io/badge/AI-SpiriTools-blue) [SpiriTools](https://github.com/adicatho/spiritools) - An open-source, fully offline AI theological assistant for Catholics, developed by ADIC (Association Diffusion Informatique Catholique). A language model grounded in Sacred Scripture, scholastic theology, papal documents and mystical texts with over 600,000 validated cross-references, built in Object Pascal on the PasLLM inference engine. The digital continuation of the Ictus Win / Biblia Clerus project.
 
 ## Websites
 
