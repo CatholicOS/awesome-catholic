@@ -104,6 +104,8 @@ A curated list of Catholic projects, libraries, software and websites.
 intended for scholars, teachers, students, pastors, believers, seekers, and others interested in the Catholic faith.
 - [Siti Cattolici](https://www.siticattolici.it/) - contains information about Catholic websites in Italy
 - [Basilica of Saint Peter Digital Twin](https://virtual.basilicasanpietro.va/) - Digital Experience of St. Peter's Basilica.
+- [Miracle's List](https://www.miracolieucaristici.org/en/Liste/list.html) - St. Carlo's website cataloguing the world's Eucharistic miracles.
+- [Apparitions of Our Lady](https://www.carloacutis.com/en/avm/home) - St. Carlo's website of Marian apparitions recognized by the Catholic Church.
 
 ## Command Line
 
