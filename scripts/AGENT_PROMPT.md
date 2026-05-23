@@ -37,8 +37,8 @@ far better to add three solid entries than ten dubious ones.
      be listed under its homepage URL rather than its GitHub URL.
 
    When unsure whether a repo is Catholic or substantial, **open its README**
-   (`gh repo view <fullName>` or fetch the README) before deciding. If still
-   unsure, leave it out.
+   (fetch `https://github.com/<fullName>` or use the GitHub MCP tools) before
+   deciding. If still unsure, leave it out.
 
 4. **Place each kept entry** in the correct section, matching the existing
    format exactly. Sections: APIs, Apps, Mobile-Apps, Web-Apps, AI Tools,
