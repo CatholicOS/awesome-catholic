@@ -32,6 +32,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - ![Ruby](https://img.shields.io/badge/language-Ruby-purple) [calendarium-romanum](https://github.com/igneus/calendarium-romanum) - Ruby library computing the Roman Catholic liturgical calendar (post-Vatican II); the foundation for church-calendar-api and calrom.
 - ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) [catholic-readings-api](https://github.com/cpbjr/catholic-readings-api) - Free REST API providing daily Catholic Mass readings, saints, and liturgical calendar data.
 - ![Python](https://img.shields.io/badge/language-Python-blue) [liturgical-calendar-mcp](https://github.com/CatholicOS/liturgical-calendar-mcp) - An MCP server that lets AI agents query the Roman Catholic Liturgical Calendar API.
+- [caminho-api](https://github.com/ElderFausto/caminho-api) - A FastAPI service exposing the 999 points of St. Josemaría Escrivá's *The Way* (Caminho).
 
 ## Apps
 
@@ -54,6 +55,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - ![Dart](https://img.shields.io/badge/language-Dart-lightblue) [aelf-flutter](https://github.com/nathanael-h/aelf-flutter) - Flutter app for the French Catholic AELF daily readings and liturgy, with offline support.
 - [DeFide](https://github.com/tristinbaker/DeFide) - FOSS Catholic Android app with the Douay-Rheims and Vulgate Bible, guided Rosary, traditional prayers, and a novena tracker.
 - [breviarium](https://github.com/Breviarium-app/breviarium--app) - Offline, lightweight app for the Roman Rite Liturgy of the Hours.
+- [The Little Office](https://apps.apple.com/us/app/the-little-office/id6746760526) - The Little Office of the Blessed Virgin Mary for iOS.
 
 ## Web-Apps
 
@@ -79,6 +81,8 @@ A curated list of Catholic projects, libraries, software and websites.
 - [Devocionario](https://www.devocionario.app/) - Catholic website in portuguese that provides daily readings and prayers.
 - [PP Devocionario](https://github.com/augustooomoraes/pp-devocionario) - web app with gregorian chants and devotional prayers in portuguese.
 - [Liturgia Hodín Online](https://github.com/breviar-sk/Liturgia-hodin-online) - Online Breviary (Liturgy of the Hours) in Slovak, Czech, Hungarian, Latin and Icelandic, running since 2011, with companion mobile apps.
+- [London Confessions](https://github.com/sf17490/london-confessions) - A web app listing Roman Catholic confession times in Central London (Zone 1).
+- [Index Librorum Prohibitorum](https://github.com/leozamboni/index-librorum-prohibitorum) - Web app to consult the historical Index of Forbidden Books.
 
 ## AI Tools
 
@@ -99,6 +103,7 @@ intended for scholars, teachers, students, pastors, believers, seekers, and othe
 - [Basilica of Saint Peter Digital Twin](https://virtual.basilicasanpietro.va/) - Digital Experience of St. Peter's Basilica.
 - [Miracle's List](https://www.miracolieucaristici.org/en/Liste/list.html) - St. Carlo's website cataloguing the world's Eucharistic miracles.
 - [Apparitions of Our Lady](https://www.carloacutis.com/en/avm/home) - St. Carlo's website of Marian apparitions recognized by the Catholic Church.
+- [Catholic Hierarchy](https://www.catholic-hierarchy.org/) - Current and historical data on the bishops and dioceses of the Catholic Church worldwide.
 
 ## Command Line
 
@@ -114,6 +119,8 @@ intended for scholars, teachers, students, pastors, believers, seekers, and othe
 - [St. Isidore e-book library](https://isidore.co/calibre/#library_id=CalibreLibrary&panel=book_list) - Collection of Catholic e-books.
 - [tridentine_calendar](https://github.com/joe-antognini/tridentine_calendar) - Python library and CLI for calculating the 1962 Roman Catholic (Tridentine) liturgical calendar.
 - [ordotools](https://github.com/ordotools/ordotools) - Python generator for the pre-Vatican II Roman Catholic Ordo.
+- [Whitaker's Words](https://github.com/mk270/whitakers-words) - William Whitaker's WORDS, a command-line Latin dictionary, invaluable for ecclesiastical Latin.
+- [tandem](https://github.com/TeamDei/tandem) - Fast, cross-platform, lightweight interactive Latin reader.
 
 ## Data
 
