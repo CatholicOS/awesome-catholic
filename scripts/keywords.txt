@@ -1,0 +1,107 @@
+# Search terms for discovering Catholic projects on GitHub.
+# One query per line. Blank lines and lines starting with '#' are ignored.
+# Each line is passed verbatim to `gh search repos`, so GitHub search
+# qualifiers (e.g. `in:name,description`, `topic:catholic`) are allowed.
+#
+# Keep the list multilingual: English-only searches miss a large share of
+# projects from Italy, Spain, Portugal/Brazil, France and the Latin-rite world.
+
+# --- English ---
+catholic
+liturgy
+liturgical calendar
+lectionary
+rosary
+breviary
+divine office
+liturgy of the hours
+catechism
+magisterium
+vulgate
+gregorian chant
+daily readings
+examination of conscience
+saints calendar
+
+# --- Topics (self-tagged) ---
+topic:catholic
+topic:liturgy
+topic:rosary
+topic:catholicism
+
+# --- Latin ---
+liturgia horarum
+breviarium
+missale romanum
+
+# --- Italian ---
+liturgia cattolica
+santo rosario
+messa
+
+# --- Spanish ---
+liturgia catolica
+santo rosario espanol
+liturgia de las horas
+
+# --- Portuguese ---
+liturgia catolica diaria
+terco
+liturgia das horas
+
+# --- French ---
+liturgie catholique
+liturgie des heures
+
+# --- German (Germany, Austria, Switzerland) ---
+katholisch
+Rosenkranz
+Stundengebet
+
+# --- Polish (Poland) ---
+katolicki
+różaniec
+brewiarz
+liturgia godzin
+
+# --- Filipino / Tagalog (Philippines) ---
+# Most Filipino Catholic projects are in English; these are the terms that hit.
+Katoliko
+panalangin
+
+# --- Croatian (Croatia) ---
+katolički
+krunica
+
+# --- Czech (Czechia) ---
+katolický
+růženec
+
+# --- Slovak (Slovakia) ---
+katolícky
+ruženec
+
+# --- Hungarian (Hungary) ---
+katolikus
+rózsafüzér
+
+# --- Lithuanian (Lithuania) ---
+katalikiškas
+rožinis
+
+# --- Vietnamese (Vietnam) ---
+Công giáo
+Kinh Mân Côi
+
+# --- Korean (South Korea) ---
+천주교
+묵주기도
+
+# --- Indian languages (Kerala, Goa, Tamil Nadu) ---
+# Note: Devanagari/Malayalam-script results on GitHub are sparse — most Indian
+# Catholic projects use English — but these cost little and occasionally hit.
+कैथोलिक
+കത്തോലിക്ക
+
+# --- Swahili (East Africa: Tanzania, Kenya, Uganda, DR Congo) ---
+Katoliki
