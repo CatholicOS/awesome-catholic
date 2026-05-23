@@ -19,7 +19,7 @@ catechism
 magisterium
 vulgate
 gregorian chant
-daily readings
+catholic daily readings
 examination of conscience
 saints calendar
 
@@ -35,9 +35,10 @@ breviarium
 missale romanum
 
 # --- Italian ---
+# ("messa" is omitted: it token-collides with "message(s)" and surfaces
+# messaging libraries rather than the Catholic Mass.)
 liturgia cattolica
 santo rosario
-messa
 
 # --- Spanish ---
 liturgia catolica
@@ -46,7 +47,7 @@ liturgia de las horas
 
 # --- Portuguese ---
 liturgia catolica diaria
-terco
+terço
 liturgia das horas
 
 # --- French ---
