@@ -15,7 +15,9 @@ A curated list of Catholic projects, libraries, software and websites.
 - [Command Line](#command-line)
 - [Data](#data)
 - [Hardware](#hardware)
+- [Neovim](#neovim)
 - [Related Awesome Lists](#related-awesome-lists)
+- [Catholic-adjacent](#catholic-adjacent)
 - [Christian and Faith-Related](#christian-and-faith-related)
 - [Attic](#attic)
 
@@ -83,6 +85,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [Liturgia Hodín Online](https://github.com/breviar-sk/Liturgia-hodin-online) - Online Breviary (Liturgy of the Hours) in Slovak, Czech, Hungarian, Latin and Icelandic, running since 2011, with companion mobile apps.
 - [London Confessions](https://github.com/sf17490/london-confessions) - A web app listing Roman Catholic confession times in Central London (Zone 1).
 - [Index Librorum Prohibitorum](https://github.com/leozamboni/index-librorum-prohibitorum) - Web app to consult the historical Index of Forbidden Books.
+- [biblos](https://github.com/dssjon/biblos) - Semantic Bible search and multi-layered analysis, incorporating the Church Fathers' commentaries for historical theological perspective. Demo at [biblos.app](https://www.biblos.app).
 
 ## AI Tools
 
@@ -119,8 +122,6 @@ intended for scholars, teachers, students, pastors, believers, seekers, and othe
 - [St. Isidore e-book library](https://isidore.co/calibre/#library_id=CalibreLibrary&panel=book_list) - Collection of Catholic e-books.
 - [tridentine_calendar](https://github.com/joe-antognini/tridentine_calendar) - Python library and CLI for calculating the 1962 Roman Catholic (Tridentine) liturgical calendar.
 - [ordotools](https://github.com/ordotools/ordotools) - Python generator for the pre-Vatican II Roman Catholic Ordo.
-- [Whitaker's Words](https://github.com/mk270/whitakers-words) - William Whitaker's WORDS, a command-line Latin dictionary, invaluable for ecclesiastical Latin.
-- [tandem](https://github.com/TeamDei/tandem) - Fast, cross-platform, lightweight interactive Latin reader.
 
 ## Data
 
@@ -146,12 +147,19 @@ intended for scholars, teachers, students, pastors, believers, seekers, and othe
 
 - [Awesome Catholic (servusdei2018)](https://github.com/servusdei2018/awesome-catholic) - Another well-maintained curated list of open-source Catholic projects.
 
+## Catholic-adjacent
+
+Tools that are not specifically Catholic (nor broadly Christian/faith) but are commonly relied on in Catholic work — chiefly ecclesiastical Latin.
+
+- [Whitaker's Words](https://github.com/mk270/whitakers-words) - William Whitaker's WORDS, a command-line Latin dictionary, invaluable for ecclesiastical Latin.
+- [tandem](https://github.com/TeamDei/tandem) - Fast, cross-platform, lightweight interactive Latin reader.
+
 ## Christian and Faith-Related
 
 Projects that are Christian or broadly faith-related but not specifically Catholic. Kept here for reference.
 
 - ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) [sanctum-ipsum](https://github.com/graysonhicks/sanctum-ipsum) - The holiest lorem ipsum generator on the internet. Use online, or with API.
-- [BibleGPT](https://biblegpt-la.com/) - An AI-powered Bible app for iOS and Android, curated by [Mount Olive Academy](https://mountoliveacademy.org/) (non denominational, so not specifically Catholic).
+- [BibleGPT](https://biblegpt-la.com/) - An AI-powered Bible app for iOS and Android, curated by [Mount Olive Academy](https://mountoliveacademy.org/) (non-denominational, so not specifically Catholic).
 - [random-bible-verses](https://github.com/rat9615/random-bible-verses/) - Requests and displays random passages from a Bible api
 - [christian-fortune](https://github.com/ngorden/christian-fortune) - Classic `fortune` command, with a Christian twist
 
@@ -180,7 +188,7 @@ Projects that appear no longer actively maintained (no commits in 3+ years) or w
 - [graduale-romanum-1908](https://github.com/ahinkley/graduale-romanum-1908) - 1908 Vatican Edition Graduale Romanum retypeset in Gregorio 4
 - [catholicism-in-json](https://github.com/aseemsavio/catholicism-in-json) - The Catechism of the Catholic Church, The Canon Law, and The General Instruction of The Roman Missal in usable JSON format.
 - ![Go](https://img.shields.io/badge/language-Go-cyan) [vulgata](https://github.com/borderstech/vulgata) - The Holy Bible with both the Douay-Rheims English and Clementina Vulgata Latin texts
-- ![Python](https://img.shields.io/badge/language-Python-blue) [catechism-ccc-json](https://github.com/nossbigg/catechism-ccc-json) - The Catechism of the Catholic Chruch in JSON.
+- ![Python](https://img.shields.io/badge/language-Python-blue) [catechism-ccc-json](https://github.com/nossbigg/catechism-ccc-json) - The Catechism of the Catholic Church in JSON.
 - ![TEX](https://img.shields.io/badge/language-TEX-green) [filipelbc/rosario](https://github.com/filipelbc/rosario) - booklet to assist in praying the rosary
 - ![Python](https://img.shields.io/badge/language-Python-blue) [edsonbittencourt/tesourofieis](https://github.com/edsonbittencourt/tesourofieis) - Space dedicated to prayer, exhibition and preservation of the holy traditions of the Catholic Church.
 - [Awesome Bible](https://github.com/awesome-bible/awesome-bible.github.io) - A curated list of awesome resources and websites about the Bible and topics related to it.
