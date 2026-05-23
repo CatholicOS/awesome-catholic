@@ -27,10 +27,27 @@ candidates for review.
 ./scripts/discover.py --format json
 
 # Widen the activity window and include archived repos
-./scripts/discover.py --inactive-months 48 --include-archived
+./scripts/discover.py --inactive-months 48 --no-no-archived
 ```
 
 Run `./scripts/discover.py --help` for the full set of options.
+
+### Authentication
+
+`gh` must be authenticated. It reads `GH_TOKEN` / `GITHUB_TOKEN` from the
+environment, so the script also runs unattended (CI, remote agents) wherever a
+token is present — no separate API key. The script preflight-checks auth and
+exits with a clear message if it's missing.
+
+### Dedup & exit codes
+
+Candidates already linked from `README.md` are skipped, and so are repos already
+proposed in any **open pull request** — so back-to-back runs won't stack
+duplicate PRs for the same find before the first one merges.
+
+Exit `0` is a clean run; `2` means some searches failed (e.g. rate limiting) and
+the output is incomplete; `1` is a fatal error (missing/unauthenticated `gh` or
+missing input files).
 
 ### Tuning the search
 

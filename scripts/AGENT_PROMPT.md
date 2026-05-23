@@ -14,8 +14,15 @@ far better to add three solid entries than ten dubious ones.
    ```bash
    ./scripts/discover.py --format json --min-stars 3
    ```
-   Each result has `fullName`, `description`, `stargazersCount`, `updatedAt`,
-   `language`, `url`, and `_matchedQuery`.
+   Each result has `fullName`, `description`, `stargazersCount`, `pushedAt`,
+   `language`, `url`, and `_matchedQuery`. The script already excludes repos
+   already in `README.md` **and** repos proposed in any open PR.
+
+   Check the **exit code**: `0` is a clean run; `2` means one or more searches
+   failed (likely rate limiting) and the results are *incomplete* — do not treat
+   a code-`2` empty/short result as "nothing new"; note the degradation in the
+   PR (or skip the run) rather than assuming the list is exhausted. `1` is a
+   fatal error (e.g. `gh` not authenticated) — stop and report it.
 
 3. **Review each candidate** and KEEP it only if ALL of these hold:
    - It is genuinely **Catholic** (or a tool/dataset clearly built for Catholic
