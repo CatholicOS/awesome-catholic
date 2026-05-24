@@ -96,7 +96,18 @@ def stars(host, owner, repo):
     return n
 
 
-def star_badge(host, owner, repo):
+# shields.io treats a trailing .svg/.json/.png/... in the path as a format
+# extension, which breaks the live github/stars badge for repos whose name ends
+# that way (e.g. "summa.json"). Those fall back to a static count badge instead.
+BAD_EXT = (".svg", ".json", ".png", ".jpg", ".jpeg", ".gif")
+STAR = re.compile(r"!\[⭐\]\([^)]*\)\s*")
+LANG = re.compile(r"(!\[[^\]]*\]\([^)]*\) )(.*)$", re.S)
+
+
+def star_badge(host, owner, repo, count):
+    if repo.lower().endswith(BAD_EXT):
+        n = count if count is not None else 0
+        return f"![⭐](https://img.shields.io/badge/%E2%AD%90-{n}-blue)"
     if host == "gh":
         url = f"https://img.shields.io/github/stars/{owner}/{repo}?label=%E2%AD%90"
     else:
@@ -105,14 +116,16 @@ def star_badge(host, owner, repo):
     return f"![⭐]({url})"
 
 
-def add_badge(line, host, owner, repo):
-    if "shields.io/github/stars" in line or "shields.io/gitea/stars" in line:
-        return line
-    m = HEAD.match(line)
-    if not m:
-        return line
-    pre, lang, rest = m.groups()
-    return f"{pre}{lang or ''}{star_badge(host, owner, repo)} {rest}"
+def add_badge(line, host, owner, repo, count):
+    """(Re)build the star badge: strip any existing one, then insert a fresh
+    badge after the language badge (if any). Regenerating keeps static counts
+    current and is a no-op for dynamic badges."""
+    body = STAR.sub("", line[2:])
+    star = star_badge(host, owner, repo, count)
+    m = LANG.match(body)
+    if m:
+        return f"- {m.group(1)}{star} {m.group(2)}"
+    return f"- {star} {body}"
 
 
 def main():
@@ -158,13 +171,13 @@ def main():
         for idx, item in enumerate(items):
             r = repo_of(item[0])
             if r:
-                badged = add_badge(item[0], *r)
-                if badged != item[0]:
-                    n_badged += 1
-                item[0] = badged
                 s = stars(*r)
                 if s is None:
                     failed.append(f"{r[1]}/{r[2]}")
+                badged = add_badge(item[0], *r, s)
+                if badged != item[0]:
+                    n_badged += 1
+                item[0] = badged
                 key = (0, -(s or 0), idx)   # repos first, stars desc
             else:
                 key = (1, 0, idx)           # non-repo entries after, stable
