@@ -36,6 +36,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - ![Python](https://img.shields.io/badge/language-Python-blue) [caminho-api](https://github.com/ElderFausto/caminho-api) - A FastAPI service exposing the 999 points of St. Josemaría Escrivá's *The Way* (Caminho). By Élder Fausto.
 - ![HTML](https://img.shields.io/badge/language-HTML-green) [catholic-mass-readings](https://github.com/rcolfin/catholic-mass-readings) - API for querying the daily Catholic Mass readings populated from the USCCB Bible website.
 - ![TypeScript](https://img.shields.io/badge/language-TypeScript-blue) [breviarium--core](https://github.com/Breviarium-app/breviarium--core) - Open-source TypeScript library providing the Liturgy of the Hours texts and logic, powering the Breviarium app.
+- ![PHP](https://img.shields.io/badge/language-PHP-blue) [OpenChurch](https://github.com/hozana/openchurch) - Open-data API for Catholic dioceses, parishes, and churches, aggregating data from multiple sources (notably Wikidata) with reliability indicators for app developers. By Hozana.
 
 ## Apps
 
@@ -60,6 +61,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - ![Kotlin](https://img.shields.io/badge/language-Kotlin-purple) [DeFide](https://github.com/tristinbaker/DeFide) - FOSS Catholic Android app with the Douay-Rheims and Vulgate Bible, guided Rosary, traditional prayers, and a novena tracker. By Tristin Baker.
 - ![Vue](https://img.shields.io/badge/language-Vue-green) [breviarium](https://github.com/Breviarium-app/breviarium--app) - Offline, lightweight app for the Roman Rite Liturgy of the Hours.
 - [The Little Office](https://apps.apple.com/us/app/the-little-office/id6746760526) - The Little Office of the Blessed Virgin Mary for iOS.
+- ![Swift](https://img.shields.io/badge/language-Swift-orange) [breviar-ios](https://github.com/gyim/breviar-ios) - iOS native app for the Catholic Liturgy of the Hours in Slovak, Czech, and Hungarian, companion to the Liturgia-hodin-online web project. By Akos Gyimesi.
 
 ## Web-Apps
 
@@ -92,6 +94,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - ![SCSS](https://img.shields.io/badge/language-SCSS-purple) [accenteur](https://github.com/BrRoman/accenteur) - Web tool for automatically accentuating liturgical Latin texts. By Nicolas Bancillon.
 - ![HTML](https://img.shields.io/badge/language-HTML-green) [marriage-booklet](https://github.com/opensourcecatholic/marriage-booklet) - Web app to help Catholic couples plan and typeset their wedding Mass booklet. By Open Source Catholic.
 - ![Python](https://img.shields.io/badge/language-Python-blue) [OrdoRomanum](https://github.com/Eclouf/OrdoRomanum) - Perpetual liturgical ordo for the Roman Rite, computing the Office, Mass, and feast-day particulars for any date.
+- ![TypeScript](https://img.shields.io/badge/language-TypeScript-blue) [officium-novum](https://github.com/miggalvez/officium-novum) - Modern liturgical engine for the traditional Roman Breviary and Missal, separating data, rubrical logic, and presentation into distinct layers and exposing a JSON API with a web frontend. By Miguel Galvez.
 
 ## AI Tools
 
@@ -147,6 +150,8 @@ intended for scholars, teachers, students, pastors, believers, seekers, and othe
 - [summa.json](https://github.com/Jacob-Gray/summa.json) - The *Summa Theologica* of St. Thomas Aquinas parsed into JSON for easy programmatic access. By Jacob Gray.
 - ![LilyPond](https://img.shields.io/badge/language-LilyPond-green) [In-adiutorium](https://github.com/igneus/In-adiutorium) - Complete musical setting of the Czech translation of the Roman Catholic Liturgy of the Hours, encoded in LilyPond. By Jakub Pavlík.
 - ![TeX](https://img.shields.io/badge/language-TeX-green) [Vesperale-Romanum](https://github.com/MRoth1910/Vesperale-Romanum) - The Vesperale Romanum — chant book for Roman Rite Vespers and Compline of the Divine Office — retypeset using Gregorio.
+- ![TeX](https://img.shields.io/badge/language-TeX-green) [atelier](https://github.com/innocentop/atelier) - Chant books and liturgical texts in the Dominican tradition, encoded in TeX and Gregorio, produced by the Atelier St. Jacques. By Fr. Innocent Smith, O.P.
+- ![XSLT](https://img.shields.io/badge/language-XSLT-green) [loth-music-bibliography](https://github.com/igneus/loth-music-bibliography) - International bibliography of sheet music for the Roman Catholic Liturgy of the Hours, published at [inadiutorium.cz/bibliography](https://inadiutorium.cz/bibliography/). By Jakub Pavlík.
 
 ## Hardware
 
