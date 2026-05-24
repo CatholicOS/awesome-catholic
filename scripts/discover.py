@@ -27,6 +27,7 @@ Examples:
 from __future__ import annotations
 
 import argparse
+import functools
 import json
 import os
 import re
@@ -65,9 +66,11 @@ SORT_PARAM = {"stars": "stars", "forks": "forks", "updated": "updated",
               "best-match": ""}
 
 
+@functools.lru_cache(maxsize=1)
 def token() -> str | None:
     """A GitHub token from the environment, the gh CLI, or git's credential
-    helper — so the script self-authenticates wherever credentials exist."""
+    helper — so the script self-authenticates wherever credentials exist.
+    Resolved once and cached (credential probing can spawn subprocesses)."""
     env = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
     if env:
         return env
