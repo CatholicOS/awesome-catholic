@@ -64,7 +64,11 @@ far better to add three solid entries than ten dubious ones.
      — match the language colour already used elsewhere; for Codeberg use the
      `gitea/stars` badge (`?gitea_url=https%3A%2F%2Fcodeberg.org&label=%E2%AD%90`).
      A repo with no detectable language still gets the star badge. Websites and
-     app-store links get **no** badge.
+     app-store links get **no** badge. If the repo *name* ends in `.json`,
+     `.svg`, `.png`, etc., the live badge breaks (shields reads it as a format),
+     so use a static count instead:
+     `![⭐](https://img.shields.io/badge/%E2%AD%90-<stars>-blue)` (the monthly
+     re-sort keeps that number current).
    - Entry shape: `- <badges> [Name](url) - One concise sentence describing it.`
    - **Ordering:** within a section, repos are sorted by star count (highest
      first); insert each new repo in its star-sorted position. Non-repo entries
