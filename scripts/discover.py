@@ -27,6 +27,7 @@ Examples:
 from __future__ import annotations
 
 import argparse
+import functools
 import json
 import os
 import re
@@ -65,8 +66,31 @@ SORT_PARAM = {"stars": "stars", "forks": "forks", "updated": "updated",
               "best-match": ""}
 
 
+@functools.lru_cache(maxsize=1)
 def token() -> str | None:
-    return os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    """A GitHub token from the environment, the gh CLI, or git's credential
+    helper — so the script self-authenticates wherever credentials exist.
+    Resolved once and cached (credential probing can spawn subprocesses)."""
+    env = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    if env:
+        return env
+    try:
+        p = subprocess.run(["gh", "auth", "token"], capture_output=True,
+                            text=True, timeout=10)
+        if p.returncode == 0 and p.stdout.strip():
+            return p.stdout.strip()
+    except Exception:
+        pass
+    try:
+        p = subprocess.run(["git", "credential", "fill"], capture_output=True,
+                           text=True, timeout=10,
+                           input="protocol=https\nhost=github.com\n\n")
+        for line in p.stdout.splitlines():
+            if line.startswith("password="):
+                return line[len("password="):] or None
+    except Exception:
+        pass
+    return None
 
 
 def api_get(path: str, params: dict | None = None,

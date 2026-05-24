@@ -21,8 +21,23 @@ far better to add three solid entries than ten dubious ones.
    Check the **exit code**: `0` is a clean run; `2` means one or more searches
    failed (likely rate limiting) and the results are *incomplete* — do not treat
    a code-`2` empty/short result as "nothing new"; note the degradation in the
-   PR (or skip the run) rather than assuming the list is exhausted. `1` is a
-   fatal error (e.g. `gh` not authenticated) — stop and report it.
+   PR (or skip the run) rather than assuming the list is exhausted.
+
+   **Exit code `1` with "no GitHub token"** means this environment exposes no
+   token to the shell (the script needs one for the REST search API). This is
+   expected in some sandboxes — it is *not* a failure of the run. Fall back to
+   the **GitHub MCP search tools** for discovery: search each line of
+   `scripts/keywords.txt`, then do the script's job yourself — exclude repos
+   already in `README.md` and any in open PRs, drop archived/forks and repos
+   under ~3 stars or inactive >2 years, and apply the Catholic review below.
+   (Other code-`1` errors, e.g. a missing input file, are real — stop and
+   report those.)
+
+   **Reading a candidate's repo:** the GitHub MCP file tools are scoped to
+   `catholicos/awesome-catholic` only and will *deny* reading any other repo —
+   so to inspect a candidate, use **WebFetch** on `https://github.com/<fullName>`
+   (or the raw README), never MCP `get file contents`. MCP search and opening
+   the PR on this repo still work normally.
 
 3. **Review each candidate** and KEEP it only if ALL of these hold:
    - It is genuinely **Catholic** (or a tool/dataset clearly built for Catholic
@@ -36,9 +51,9 @@ far better to add three solid entries than ten dubious ones.
      double-check by repo name AND by project/website name, since a project may
      be listed under its homepage URL rather than its GitHub URL.
 
-   When unsure whether a repo is Catholic or substantial, **open its README**
-   (fetch `https://github.com/<fullName>` or use the GitHub MCP tools) before
-   deciding. If still unsure, leave it out.
+   When unsure whether a repo is Catholic or substantial, **open its README with
+   WebFetch** (`https://github.com/<fullName>`) — not the MCP file tools, which
+   can't read repos other than this one. If still unsure, leave it out.
 
 4. **Place each kept entry** in the correct section, matching the existing
    format exactly. Sections: APIs, Apps, Mobile-Apps, Web-Apps, AI Tools,
@@ -50,9 +65,19 @@ far better to add three solid entries than ten dubious ones.
      and app-store links get **no** badge. (A repo with no detectable language
      also gets none.)
    - Entry shape: `- [Name](url) - One concise sentence describing it.`
-   - **Name the creator where evident** — the GitHub owner, or an author/org
-     named on the project's site (e.g. "…by Jane Doe."). Skip it if not readily
-     determinable; don't guess.
+   - **Name the creator — but only when you're confident, never guessing.**
+     Research it: for a repo, read the owner's GitHub/Codeberg profile and use
+     their real *name* (e.g. `igneus` → "Jakub Pavlík"); for a site, use an
+     author or organization named in its footer/about (via WebFetch). Append it
+     as a trailing sentence: `... By <Creator>.`
+     Apply these rules (matching the existing entries):
+     - Use a real name or a meaningful organization only. **Skip** a bare
+       handle/username with no real name (e.g. don't write "By nonnobisdomine62")
+       and **skip** an org name that just repeats the entry (e.g. `gregorio` by
+       "Gregorio").
+     - If you can't determine the creator confidently, omit it — a missing
+       credit is better than a wrong one.
+     - Entries whose description already names a curator need no addition.
    - Note non-Catholic-but-adjacent caveats honestly, as existing entries do
      (see the BibleGPT entry).
 
