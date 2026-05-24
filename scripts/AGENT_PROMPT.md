@@ -65,9 +65,19 @@ far better to add three solid entries than ten dubious ones.
      and app-store links get **no** badge. (A repo with no detectable language
      also gets none.)
    - Entry shape: `- [Name](url) - One concise sentence describing it.`
-   - **Name the creator where evident** — the GitHub owner, or an author/org
-     named on the project's site (e.g. "…by Jane Doe."). Skip it if not readily
-     determinable; don't guess.
+   - **Name the creator — but only when you're confident, never guessing.**
+     Research it: for a repo, read the owner's GitHub/Codeberg profile and use
+     their real *name* (e.g. `igneus` → "Jakub Pavlík"); for a site, use an
+     author or organization named in its footer/about (via WebFetch). Append it
+     as a trailing sentence: `... By <Creator>.`
+     Apply these rules (matching the existing entries):
+     - Use a real name or a meaningful organization only. **Skip** a bare
+       handle/username with no real name (e.g. don't write "By nonnobisdomine62")
+       and **skip** an org name that just repeats the entry (e.g. `gregorio` by
+       "Gregorio").
+     - If you can't determine the creator confidently, omit it — a missing
+       credit is better than a wrong one.
+     - Entries whose description already names a curator need no addition.
    - Note non-Catholic-but-adjacent caveats honestly, as existing entries do
      (see the BibleGPT entry).
 
