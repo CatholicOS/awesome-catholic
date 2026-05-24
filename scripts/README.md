@@ -106,8 +106,9 @@ run it any time to refresh the ordering as star counts drift.
 ./scripts/sort.py
 ```
 
-The monthly maintenance run executes this after `audit.py`, so the list's order
-stays fresh without manual upkeep. Same token resolution as the other scripts.
+The monthly maintenance run executes this after `audit.py --apply`, so the
+list's order stays fresh without manual upkeep. Same token resolution as the
+other scripts.
 
 ## Scheduled agents
 

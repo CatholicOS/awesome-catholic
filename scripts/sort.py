@@ -18,6 +18,7 @@ import json
 import os
 import re
 import subprocess
+import sys
 import urllib.request
 from pathlib import Path
 
@@ -79,6 +80,8 @@ def repo_of(line):
 
 _stars = {}
 def stars(host, owner, repo):
+    """Current star count, or None if the lookup failed — kept distinct from a
+    real 0 so a network/rate-limit error can't silently re-order a repo."""
     key = (host, owner.lower(), repo.lower())
     if key in _stars:
         return _stars[key]
@@ -88,7 +91,7 @@ def stars(host, owner, repo):
         else:
             n = api(f"https://codeberg.org/api/v1/repos/{owner}/{repo}").get("stars_count", 0)
     except Exception:
-        n = 0
+        n = None
     _stars[key] = n
     return n
 
@@ -129,10 +132,18 @@ def main():
         else:
             cur[1].append(line)
 
-    out, n_badged = list(head), 0
+    out, n_badged, failed = list(head), 0, []
     for header, body in sections:
-        # group body into items: a bullet line plus its continuation lines
-        items, i = [], 0
+        i = 0
+        # preamble = non-blank lines before the first bullet (e.g. a section
+        # description); preserved so nothing is silently dropped.
+        preamble = []
+        while i < len(body) and not body[i].startswith("- "):
+            if body[i].strip():
+                preamble.append(body[i])
+            i += 1
+        # items = a bullet line plus its continuation lines
+        items = []
         while i < len(body):
             if body[i].startswith("- "):
                 item = [body[i]]
@@ -148,20 +159,31 @@ def main():
             r = repo_of(item[0])
             if r:
                 badged = add_badge(item[0], *r)
-                if badged != item[0] or "shields.io" in badged:
-                    n_badged += 1 if badged != item[0] else 0
+                if badged != item[0]:
+                    n_badged += 1
                 item[0] = badged
-                key = (0, -stars(*r), idx)   # repos first, stars desc
+                s = stars(*r)
+                if s is None:
+                    failed.append(f"{r[1]}/{r[2]}")
+                key = (0, -(s or 0), idx)   # repos first, stars desc
             else:
-                key = (1, 0, idx)            # non-repo entries after, stable
+                key = (1, 0, idx)           # non-repo entries after, stable
             decorated.append((key, item))
         decorated.sort(key=lambda d: d[0])
 
         out.append(header)
         out.append("")
+        out.extend(preamble)
+        if preamble:
+            out.append("")
         for _, item in decorated:
             out.extend(item)
         out.append("")
+
+    if failed:
+        sys.exit(f"error: star lookup failed for {len(failed)} repo(s) "
+                 f"({', '.join(failed[:5])}{'…' if len(failed) > 5 else ''}); "
+                 "aborting without re-sorting to avoid mis-ordering.")
 
     text = re.sub(r"\n{3,}", "\n\n", "\n".join(out)).rstrip() + "\n"
     args.readme.write_text(text, encoding="utf-8")

@@ -50,8 +50,9 @@ add or remove any. Work conservatively and open at most one PR.
    so don't open a PR. Otherwise **open one PR** from a `maintenance/YYYY-MM-DD`
    branch. The body must list each Attic move with its direction, the entry name,
    its last-activity date, and the origin/destination section; note that the rest
-   of the diff is the routine star re-sort, plus any flagged sites. Keep changes to
-   `README.md` only.
+   of the diff is the routine star re-sort. Also mention anything `audit.py`
+   flagged for manual review (e.g. an attic repo missing its `origin` tag), if
+   any. Keep changes to `README.md` only.
 
 ## Guardrails
 

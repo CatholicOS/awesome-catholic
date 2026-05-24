@@ -164,10 +164,14 @@ intended for scholars, teachers, students, pastors, believers, seekers, and othe
 
 ## Catholic-adjacent
 
+Tools that are not specifically Catholic (nor broadly Christian/faith) but are commonly relied on in Catholic work — chiefly ecclesiastical Latin.
+
 - ![Ada](https://img.shields.io/badge/language-Ada-blue) ![⭐](https://img.shields.io/github/stars/mk270/whitakers-words?label=%E2%AD%90) [Whitaker's Words](https://github.com/mk270/whitakers-words) - William Whitaker's WORDS, a command-line Latin dictionary, invaluable for ecclesiastical Latin. By Martin Keegan.
 - ![Go](https://img.shields.io/badge/language-Go-cyan) ![⭐](https://img.shields.io/github/stars/TeamDei/tandem?label=%E2%AD%90) [tandem](https://github.com/TeamDei/tandem) - Fast, cross-platform, lightweight interactive Latin reader.
 
 ## Christian and Faith-Related
+
+Projects that are Christian or broadly faith-related but not specifically Catholic. Kept here for reference.
 
 - ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) ![⭐](https://img.shields.io/github/stars/graysonhicks/sanctum-ipsum?label=%E2%AD%90) [sanctum-ipsum](https://github.com/graysonhicks/sanctum-ipsum) - The holiest lorem ipsum generator on the internet. Use online, or with API. By Grayson Hicks.
 - ![CSS](https://img.shields.io/badge/language-CSS-purple) ![⭐](https://img.shields.io/github/stars/rat9615/random-bible-verses?label=%E2%AD%90) [random-bible-verses](https://github.com/rat9615/random-bible-verses/) - Requests and displays random passages from a Bible api. By Rohan R.
@@ -175,6 +179,8 @@ intended for scholars, teachers, students, pastors, believers, seekers, and othe
 - [BibleGPT](https://biblegpt-la.com/) - An AI-powered Bible app for iOS and Android, curated by [Mount Olive Academy](https://mountoliveacademy.org/) (non-denominational, so not specifically Catholic).
 
 ## Attic
+
+Projects that appear no longer actively maintained (no commits in 3+ years) or whose links are no longer reachable. Preserved for historical reference.
 
 - ![Awk](https://img.shields.io/badge/language-Awk-grey) ![⭐](https://img.shields.io/github/stars/LukeSmithxyz/vul?label=%E2%AD%90) [vul](https://github.com/LukeSmithxyz/vul) - Latin Vulgate Bible on the Command Line. By Luke Smith. <!-- origin: Command Line -->
 - ![⭐](https://img.shields.io/github/stars/historical-theology/awesome-theology?label=%E2%AD%90) [Awesome Theology](https://github.com/historical-theology/awesome-theology) - A curated list of open source software for Catholic theology. By Corey Stephan. <!-- origin: Related-Awesome-Lists -->
