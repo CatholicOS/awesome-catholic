@@ -54,7 +54,7 @@ missing input files).
 ### Tuning the search
 
 Edit [`keywords.txt`](keywords.txt) to add or refine search terms. Each non-blank,
-non-comment line is one `gh search repos` query, so GitHub search qualifiers
+non-comment line is one GitHub repo-search query, so search qualifiers
 (`topic:catholic`, `in:name,description`, etc.) work. Keep the list multilingual —
 many Catholic projects come from Italian, Spanish, Portuguese and French authors.
 
@@ -65,8 +65,34 @@ and project names occasionally collide (e.g. a security tool named "RosaryAV").
 The output is a *candidate* list for a human (or the review agent) to judge — it
 is not meant to be added verbatim.
 
-## Scheduled discovery agent
+## `audit.py`
 
-A scheduled Claude Code agent runs `discover.py`, reviews the candidates, and
-opens a pull request adding the worthwhile ones to `README.md`. See
-[`AGENT_PROMPT.md`](AGENT_PROMPT.md) for the exact instructions it follows.
+Keeps the list current by moving entries between the active sections and the
+**Attic** based on each backing repo's last push date (same token/auth as
+`discover.py`).
+
+```bash
+./scripts/audit.py             # report proposed moves (no changes)
+./scripts/audit.py --apply     # perform the repo moves in README.md
+./scripts/audit.py --months 24 --revive-months 6   # tune the thresholds
+```
+
+- **Stale → Attic**: active-section repos archived or not pushed in `--months`
+  months (default 36).
+- **Attic → origin**: attic'd repos pushed within `--revive-months` months
+  (default 12). The gap between the two windows is **hysteresis** — it stops
+  entries near the threshold from flapping in and out each run.
+- Attic moves record an `<!-- origin: <Section> -->` marker so revival is
+  deterministic. Websites/apps are neither moved nor liveness-checked —
+  reachability from the run environment is unreliable (sandboxed DNS can make a
+  live site look dead), so they're only counted and curated by hand.
+
+## Scheduled agents
+
+Two scheduled Claude Code agents run against this repo, each opening a PR you
+review:
+
+- **Discovery** (weekly) runs `discover.py`, vets candidates, and adds new
+  Catholic projects — see [`AGENT_PROMPT.md`](AGENT_PROMPT.md).
+- **Maintenance** (monthly) runs `audit.py --apply` and proposes stale↔Attic
+  moves — see [`MAINTENANCE_PROMPT.md`](MAINTENANCE_PROMPT.md).
