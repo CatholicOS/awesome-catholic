@@ -48,7 +48,7 @@ A curated list of Catholic projects, libraries, software and websites.
 ## Mobile-Apps
 
 - ![Dart](https://img.shields.io/badge/language-Dart-lightblue) [St. Andrew Novena Mobile App](https://github.com/mftruso/st-andrew-novena) - Flutter app to count daily recitations of the St. Andrew novena prayer, 15 times daily. By Mike Truso.
-- [Universalis](https://universalis.com/) - daily Liturgy of the Hours with apps for [Android](https://universalis.com/n-android.htm), [iPhone/iPad](https://universalis.com/n-ios.htm), [MacOS](https://universalis.com/n-mac.htm), and [Windows](https://universalis.com/n-windows.htm).
+- [Universalis](https://universalis.com/) - daily Liturgy of the Hours with apps for [Android](https://universalis.com/n-android.htm), [iPhone/iPad](https://universalis.com/n-ios.htm), [MacOS](https://universalis.com/n-mac.htm), and [Windows](https://universalis.com/n-windows.htm). By Universalis Publishing Ltd.
 - ![Dart](https://img.shields.io/badge/language-Dart-lightblue) [Mariam](https://github.com/aldrinzigmundv/mariam) - meditative rosary app that enables believers to pray the Rosary. By Aldrin Velasco.
 - ![Vue](https://img.shields.io/badge/language-Vue-green) [Prayer Book](https://codeberg.org/jozo/prayer-book) - mobile app with catholic prayers
 - ![Kotlin](https://img.shields.io/badge/language-Kotlin-purple) [Rosarium](https://codeberg.org/Krixec/Rosarium) - multilingual rosary app
@@ -63,7 +63,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [Easter dates](https://easter-dates.gavinr.com/) - Distribution of Easter per Date Across Years, visualized.
 - ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) [Confessit](https://github.com/kas-catholic/confessit-web) - A progressive web app designed to help Roman Catholics prepare for the sacrament of confession by examining their conscience. By Mike.
 - [OrariMesse](https://orarimesse.it/) - Mass times app for web, curated by the Italian Bishops Conference (C.E.I.) and the affiliate company [IDS&Unitelm](https://www.idsunitelm.it/).
-- [Misas.org](https://misas.org/) - Mass times, lectionary readings and more, in Spanish
+- [Misas.org](https://misas.org/) - Mass times, lectionary readings and more, in Spanish. By Asociación Eucharistia.
 - ![HTML](https://img.shields.io/badge/language-HTML-green) [divinum-officium](https://github.com/DivinumOfficium/divinum-officium) - Traditional Roman Missal and Breviary Texts.
 - ![MDX](https://img.shields.io/badge/language-MDX-yellow) [Oficjum](https://github.com/anna-wro/rkk) - A progressive web application that provides daily liturgical texts for the Liturgy of the Hours in Polish. Demo at [oficjum.starokatolicy.eu](https://oficjum.starokatolicy.eu/). By Anna Wróbel.
 - ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) [Rosarium](https://github.com/leozamboni/Rosarium) - Web application designed to help Catholics pray the Holy Rosary in Latin in an interactive and immersive way through 3D models of Catholic churches generated through photogrammetry. Demo: [leozamboni.github.io/Rosarium](https://leozamboni.github.io/Rosarium). By Leonardo.
@@ -97,17 +97,17 @@ A curated list of Catholic projects, libraries, software and websites.
 
 ## Websites
 
-- [QUMRAN NET](https://www.qumran2.net/) - online database of materials for Catholic pastoral care in Italian
+- [QUMRAN NET](https://www.qumran2.net/) - online database of materials for Catholic pastoral care in Italian. By Associazione Qumran.
 - [Cathopedia](https://it.cathopedia.org/) - An Italian Catholic wiki presenting the faith in a pastoral tone, faithful to the Magisterium.
-- [Santi e beati](https://www.santiebeati.it/) - A website about saints and martyrs.
+- [Santi e beati](https://www.santiebeati.it/) - A website about saints and martyrs. By Francesco Diani.
 - [GCatholic.org](https://gcatholic.org/) - A website with a slew of information about the Catholic Church and its institutions, hierarchy, liturgy, etc.
 - [Catholic Resources](https://catholic-resources.org/) - contains a variety of materials, mostly related to biblical and liturgical studies,
-intended for scholars, teachers, students, pastors, believers, seekers, and others interested in the Catholic faith.
+intended for scholars, teachers, students, pastors, believers, seekers, and others interested in the Catholic faith. By Felix Just, S.J.
 - [Siti Cattolici](https://www.siticattolici.it/) - contains information about Catholic websites in Italy
 - [Basilica of Saint Peter Digital Twin](https://virtual.basilicasanpietro.va/) - Digital Experience of St. Peter's Basilica.
 - [Miracle's List](https://www.miracolieucaristici.org/en/Liste/list.html) - St. Carlo's website cataloguing the world's Eucharistic miracles.
 - [Apparitions of Our Lady](https://www.carloacutis.com/en/avm/home) - St. Carlo's website of Marian apparitions recognized by the Catholic Church.
-- [Catholic Hierarchy](https://www.catholic-hierarchy.org/) - Current and historical data on the bishops and dioceses of the Catholic Church worldwide.
+- [Catholic Hierarchy](https://www.catholic-hierarchy.org/) - Current and historical data on the bishops and dioceses of the Catholic Church worldwide. By David M. Cheney.
 
 ## Command Line
 
