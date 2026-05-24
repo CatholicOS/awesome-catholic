@@ -34,6 +34,8 @@ A curated list of Catholic projects, libraries, software and websites.
 - ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) [catholic-readings-api](https://github.com/cpbjr/catholic-readings-api) - Free REST API providing daily Catholic Mass readings, saints, and liturgical calendar data.
 - ![Python](https://img.shields.io/badge/language-Python-blue) [liturgical-calendar-mcp](https://github.com/CatholicOS/liturgical-calendar-mcp) - An MCP server that lets AI agents query the Roman Catholic Liturgical Calendar API. By CatholicOS.
 - ![Python](https://img.shields.io/badge/language-Python-blue) [caminho-api](https://github.com/ElderFausto/caminho-api) - A FastAPI service exposing the 999 points of St. Josemaría Escrivá's *The Way* (Caminho). By Élder Fausto.
+- ![HTML](https://img.shields.io/badge/language-HTML-green) [catholic-mass-readings](https://github.com/rcolfin/catholic-mass-readings) - API for querying the daily Catholic Mass readings populated from the USCCB Bible website.
+- ![TypeScript](https://img.shields.io/badge/language-TypeScript-blue) [breviarium--core](https://github.com/Breviarium-app/breviarium--core) - Open-source TypeScript library providing the Liturgy of the Hours texts and logic, powering the Breviarium app.
 
 ## Apps
 
@@ -44,6 +46,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [Evangelizo](https://www.evangelizo.org/) - provides the daily Gospel readings, prayers, and information about saints online and through an app. Available in many different languages.
 - [Holy Habits](https://holyhabits.app/) - offers a simple and intuitive way to build habits that actually lead you closer to God, individually, or with friends.
 - [Biblia Matos Soares](https://play.google.com/store/apps/details?id=br.com.hansmboron.biblia_ms&pcampaignid=web_share) - Android app of Fr. Manuel de Matos Soares's classic 1956 Portuguese translation of the Bible.
+- ![Python](https://img.shields.io/badge/language-Python-blue) [homeassistant-catholic-calendar](https://github.com/jmacri01/homeassistant-custom-components-catholic-calendar) - Home Assistant custom component adding a Catholic liturgical calendar sensor and calendar entity.
 
 ## Mobile-Apps
 
@@ -86,6 +89,9 @@ A curated list of Catholic projects, libraries, software and websites.
 - ![HTML](https://img.shields.io/badge/language-HTML-green) [Index Librorum Prohibitorum](https://github.com/leozamboni/index-librorum-prohibitorum) - Web app to consult the historical Index of Forbidden Books. By Leonardo.
 - ![Python](https://img.shields.io/badge/language-Python-blue) [biblos](https://github.com/dssjon/biblos) - Semantic Bible search and multi-layered analysis, incorporating the Church Fathers' commentaries for historical theological perspective. Demo at [biblos.app](https://www.biblos.app). By Jon Boldt.
 - [OrarioSanteMesse](https://orariosantemesse.org/) - Mass times app for web, curated by volunteers of the Association Orariosantemesse and technical support from [Maestrale Group](https://www.maestrale.it/).
+- ![SCSS](https://img.shields.io/badge/language-SCSS-purple) [accenteur](https://github.com/BrRoman/accenteur) - Web tool for automatically accentuating liturgical Latin texts. By Nicolas Bancillon.
+- ![HTML](https://img.shields.io/badge/language-HTML-green) [marriage-booklet](https://github.com/opensourcecatholic/marriage-booklet) - Web app to help Catholic couples plan and typeset their wedding Mass booklet. By Open Source Catholic.
+- ![Python](https://img.shields.io/badge/language-Python-blue) [OrdoRomanum](https://github.com/Eclouf/OrdoRomanum) - Perpetual liturgical ordo for the Roman Rite, computing the Office, Mass, and feast-day particulars for any date.
 
 ## AI Tools
 
@@ -124,6 +130,8 @@ intended for scholars, teachers, students, pastors, believers, seekers, and othe
 - ![Python](https://img.shields.io/badge/language-Python-blue) [tridentine_calendar](https://github.com/joe-antognini/tridentine_calendar) - Python library and CLI for calculating the 1962 Roman Catholic (Tridentine) liturgical calendar. By Joseph Antognini.
 - ![Python](https://img.shields.io/badge/language-Python-blue) [ordotools](https://github.com/ordotools/ordotools) - Python generator for the pre-Vatican II Roman Catholic Ordo. By Fr. Barnes.
 - ![Lua](https://img.shields.io/badge/language-Lua-navy) [Lectio.nvim](https://github.com/ngorden/lectio.nvim) - Neovim plugin to practice lectio divina. By Nicholas Gorden.
+- ![Python](https://img.shields.io/badge/language-Python-blue) [catholic-cli](https://github.com/aseemsavio/catholic-cli) - Command-line tool for easy access to Catholic resources including the Catechism, Canon Law, and the Bible. By Aseem Savio.
+- ![Python](https://img.shields.io/badge/language-Python-blue) [python-curses](https://github.com/mezcel/python-curses) - Terminal-based Rosary guide written in Python using the curses library.
 
 ## Data
 
@@ -135,6 +143,10 @@ intended for scholars, teachers, students, pastors, believers, seekers, and othe
 - ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) [codexcommunion/prayer-collection](https://github.com/codexcommunion/prayer-collection) - A comprehensive collection of traditional Roman Catholic prayers in multiple languages, organized as structured JSON files.
 - ![Shell](https://img.shields.io/badge/language-Shell-green) [bible-nabre-json-dataset](https://github.com/nirmalben/bible-nabre-json-dataset) - The New American Bible Revised Edition (NABRE) in JSON, with the script used to generate it. By Nirmal Benann.
 - [vulgate](https://github.com/BrRoman/vulgate) - The Latin Vulgate with full ecclesiastical accent marks, plus a yearly reading plan. By Nicolas Bancillon.
+- [bibliaAveMariaJSON](https://github.com/fidalgobr/bibliaAveMariaJSON) - The Catholic *Bíblia Ave Maria* (a popular Brazilian Portuguese translation) in JSON format.
+- [summa.json](https://github.com/Jacob-Gray/summa.json) - The *Summa Theologica* of St. Thomas Aquinas parsed into JSON for easy programmatic access. By Jacob Gray.
+- ![LilyPond](https://img.shields.io/badge/language-LilyPond-green) [In-adiutorium](https://github.com/igneus/In-adiutorium) - Complete musical setting of the Czech translation of the Roman Catholic Liturgy of the Hours, encoded in LilyPond. By Jakub Pavlík.
+- ![TeX](https://img.shields.io/badge/language-TeX-green) [Vesperale-Romanum](https://github.com/MRoth1910/Vesperale-Romanum) - The Vesperale Romanum — chant book for Roman Rite Vespers and Compline of the Divine Office — retypeset using Gregorio.
 
 ## Hardware
 
