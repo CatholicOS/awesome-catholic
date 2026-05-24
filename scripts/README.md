@@ -93,9 +93,21 @@ Each code-repo entry carries two badges — a language badge and a **live star
 badge** (`shields.io/github/stars/...`, or `gitea/stars` for Codeberg) — then
 the link, description, and `By <Creator>.` Websites/apps have no badge. Within
 each section, repos are ordered by star count (highest first) and non-repo
-entries follow. The star badges are live, but the *order* is a snapshot — it's
-refreshed when the list is re-sorted (today a manual pass; a future maintenance
-step can automate it).
+entries follow. The star badges are live, but the *order* is a snapshot,
+refreshed by `sort.py` (run monthly by the maintenance agent).
+
+## `sort.py`
+
+Re-orders each section by current star count (descending; non-repo entries
+after) and adds a live star badge to any repo still missing one. Idempotent —
+run it any time to refresh the ordering as star counts drift.
+
+```bash
+./scripts/sort.py
+```
+
+The monthly maintenance run executes this after `audit.py`, so the list's order
+stays fresh without manual upkeep. Same token resolution as the other scripts.
 
 ## Scheduled agents
 
@@ -104,5 +116,6 @@ review:
 
 - **Discovery** (weekly) runs `discover.py`, vets candidates, and adds new
   Catholic projects — see [`AGENT_PROMPT.md`](AGENT_PROMPT.md).
-- **Maintenance** (monthly) runs `audit.py --apply` and proposes stale↔Attic
-  moves — see [`MAINTENANCE_PROMPT.md`](MAINTENANCE_PROMPT.md).
+- **Maintenance** (monthly) runs `audit.py --apply` then `sort.py` — proposing
+  stale↔Attic moves and re-sorting by stars — see
+  [`MAINTENANCE_PROMPT.md`](MAINTENANCE_PROMPT.md).

@@ -22,12 +22,9 @@ add or remove any. Work conservatively and open at most one PR.
    Exit code `2` means some repo checks failed (rate limit / network); note that
    the run is partial and consider skipping rather than acting on incomplete data.
 
-3. **If it proposes no moves, stop** — do not open a PR.
-
-4. **Apply and review.**
+3. **Apply moves (if any).**
    ```bash
    ./scripts/audit.py --apply
-   git diff
    ```
    - Stale → Attic moves append an `<!-- origin: <Section> -->` marker so the
      entry can later be revived to the right place. Revivals strip that marker
@@ -40,9 +37,20 @@ add or remove any. Work conservatively and open at most one PR.
      look dead), so it must not drive any move. The report only *counts* them;
      leave site curation to humans.
 
-5. **Open one PR** from a `maintenance/YYYY-MM-DD` branch. The body must list each
-   move with its direction, the entry name, its last-activity date, and the
-   origin/destination section, plus any flagged sites. Keep changes to
+4. **Re-sort by stars** (always, even when there were no Attic moves — this is
+   how the ordering stays fresh as star counts change):
+   ```bash
+   ./scripts/sort.py
+   git diff
+   ```
+   It re-orders each section by current star count (descending; non-repo
+   entries after) and badges any repo still missing a star badge.
+
+5. **If `git diff` is empty, stop** — nothing moved and the order didn't change,
+   so don't open a PR. Otherwise **open one PR** from a `maintenance/YYYY-MM-DD`
+   branch. The body must list each Attic move with its direction, the entry name,
+   its last-activity date, and the origin/destination section; note that the rest
+   of the diff is the routine star re-sort, plus any flagged sites. Keep changes to
    `README.md` only.
 
 ## Guardrails
