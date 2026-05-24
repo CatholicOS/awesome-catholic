@@ -21,8 +21,16 @@ far better to add three solid entries than ten dubious ones.
    Check the **exit code**: `0` is a clean run; `2` means one or more searches
    failed (likely rate limiting) and the results are *incomplete* — do not treat
    a code-`2` empty/short result as "nothing new"; note the degradation in the
-   PR (or skip the run) rather than assuming the list is exhausted. `1` is a
-   fatal error (e.g. `gh` not authenticated) — stop and report it.
+   PR (or skip the run) rather than assuming the list is exhausted.
+
+   **Exit code `1` with "no GitHub token"** means this environment exposes no
+   token to the shell (the script needs one for the REST search API). This is
+   expected in some sandboxes — it is *not* a failure of the run. Fall back to
+   the **GitHub MCP search tools**: search each line of `scripts/keywords.txt`,
+   then do the script's job yourself — exclude repos already in `README.md` and
+   any in open PRs, drop archived/forks and repos under ~3 stars or inactive
+   >2 years, and apply the Catholic review below. (Other code-`1` errors, e.g.
+   a missing input file, are real — stop and report those.)
 
 3. **Review each candidate** and KEEP it only if ALL of these hold:
    - It is genuinely **Catholic** (or a tool/dataset clearly built for Catholic

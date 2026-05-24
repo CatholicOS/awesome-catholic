@@ -29,6 +29,7 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -49,7 +50,28 @@ EXCLUDE = {"Contents", ATTIC, "Christian and Faith-Related", "Catholic-adjacent"
 
 
 def token():
-    return os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    """A GitHub token from the environment, the gh CLI, or git's credential
+    helper — so the script self-authenticates wherever credentials exist."""
+    env = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    if env:
+        return env
+    try:
+        p = subprocess.run(["gh", "auth", "token"], capture_output=True,
+                            text=True, timeout=10)
+        if p.returncode == 0 and p.stdout.strip():
+            return p.stdout.strip()
+    except Exception:
+        pass
+    try:
+        p = subprocess.run(["git", "credential", "fill"], capture_output=True,
+                           text=True, timeout=10,
+                           input="protocol=https\nhost=github.com\n\n")
+        for line in p.stdout.splitlines():
+            if line.startswith("password="):
+                return line[len("password="):] or None
+    except Exception:
+        pass
+    return None
 
 
 def api_get(url):
