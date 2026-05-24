@@ -58,13 +58,17 @@ far better to add three solid entries than ten dubious ones.
 4. **Place each kept entry** in the correct section, matching the existing
    format exactly. Sections: APIs, Apps, Mobile-Apps, Web-Apps, AI Tools,
    Websites, Command Line, Data, Hardware, Related-Awesome-Lists.
-   - **Badges (uniform rule):** every code repo (GitHub/Codeberg) gets exactly
-     one primary-language badge,
-     `![Lang](https://img.shields.io/badge/language-<Lang>-<color>)`, matching
-     the colour already used for that language elsewhere in the file. Websites
-     and app-store links get **no** badge. (A repo with no detectable language
-     also gets none.)
-   - Entry shape: `- [Name](url) - One concise sentence describing it.`
+   - **Badges (uniform rule):** every code repo (GitHub/Codeberg) gets a
+     primary-language badge **and** a live star badge, in that order:
+     `![Lang](https://img.shields.io/badge/language-<Lang>-<color>) ![⭐](https://img.shields.io/github/stars/<owner>/<repo>?label=%E2%AD%90)`
+     — match the language colour already used elsewhere; for Codeberg use the
+     `gitea/stars` badge (`?gitea_url=https%3A%2F%2Fcodeberg.org&label=%E2%AD%90`).
+     A repo with no detectable language still gets the star badge. Websites and
+     app-store links get **no** badge.
+   - Entry shape: `- <badges> [Name](url) - One concise sentence describing it.`
+   - **Ordering:** within a section, repos are sorted by star count (highest
+     first); insert each new repo in its star-sorted position. Non-repo entries
+     (websites/apps) go after the repos.
    - **Name the creator — but only when you're confident, never guessing.**
      Research it: for a repo, read the owner's GitHub/Codeberg profile and use
      their real *name* (e.g. `igneus` → "Jakub Pavlík"); for a site, use an

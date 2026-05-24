@@ -87,6 +87,16 @@ Keeps the list current by moving entries between the active sections and the
   reachability from the run environment is unreliable (sandboxed DNS can make a
   live site look dead), so they're only counted and curated by hand.
 
+## Entry format
+
+Each code-repo entry carries two badges — a language badge and a **live star
+badge** (`shields.io/github/stars/...`, or `gitea/stars` for Codeberg) — then
+the link, description, and `By <Creator>.` Websites/apps have no badge. Within
+each section, repos are ordered by star count (highest first) and non-repo
+entries follow. The star badges are live, but the *order* is a snapshot — it's
+refreshed when the list is re-sorted (today a manual pass; a future maintenance
+step can automate it).
+
 ## Scheduled agents
 
 Two scheduled Claude Code agents run against this repo, each opening a PR you
