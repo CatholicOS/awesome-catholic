@@ -42,11 +42,17 @@ far better to add three solid entries than ten dubious ones.
 
 4. **Place each kept entry** in the correct section, matching the existing
    format exactly. Sections: APIs, Apps, Mobile-Apps, Web-Apps, AI Tools,
-   Websites, Command Line, Data, Hardware, Neovim, Related-Awesome-Lists.
-   - Add a language badge when the section's entries use one, e.g.
-     `![Python](https://img.shields.io/badge/language-Python-blue)`. Match the
-     color convention already used for that language elsewhere in the file.
+   Websites, Command Line, Data, Hardware, Related-Awesome-Lists.
+   - **Badges (uniform rule):** every code repo (GitHub/Codeberg) gets exactly
+     one primary-language badge,
+     `![Lang](https://img.shields.io/badge/language-<Lang>-<color>)`, matching
+     the colour already used for that language elsewhere in the file. Websites
+     and app-store links get **no** badge. (A repo with no detectable language
+     also gets none.)
    - Entry shape: `- [Name](url) - One concise sentence describing it.`
+   - **Name the creator where evident** — the GitHub owner, or an author/org
+     named on the project's site (e.g. "…by Jane Doe."). Skip it if not readily
+     determinable; don't guess.
    - Note non-Catholic-but-adjacent caveats honestly, as existing entries do
      (see the BibleGPT entry).
 
