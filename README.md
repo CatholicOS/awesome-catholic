@@ -15,7 +15,6 @@ A curated list of Catholic projects, libraries, software and websites.
 - [Command Line](#command-line)
 - [Data](#data)
 - [Hardware](#hardware)
-- [Neovim](#neovim)
 - [Related Awesome Lists](#related-awesome-lists)
 - [Catholic-adjacent](#catholic-adjacent)
 - [Christian and Faith-Related](#christian-and-faith-related)
@@ -122,6 +121,7 @@ intended for scholars, teachers, students, pastors, believers, seekers, and othe
 - [St. Isidore e-book library](https://isidore.co/calibre/#library_id=CalibreLibrary&panel=book_list) - Collection of Catholic e-books.
 - ![Python](https://img.shields.io/badge/language-Python-blue) [tridentine_calendar](https://github.com/joe-antognini/tridentine_calendar) - Python library and CLI for calculating the 1962 Roman Catholic (Tridentine) liturgical calendar.
 - ![Python](https://img.shields.io/badge/language-Python-blue) [ordotools](https://github.com/ordotools/ordotools) - Python generator for the pre-Vatican II Roman Catholic Ordo.
+- ![Lua](https://img.shields.io/badge/language-Lua-navy) [Lectio.nvim](https://github.com/ngorden/lectio.nvim) - Neovim plugin to practice lectio divina.
 
 ## Data
 
@@ -138,10 +138,6 @@ intended for scholars, teachers, students, pastors, believers, seekers, and othe
 
 - ![C](https://img.shields.io/badge/language-C-gray) [Catholic Lectionary on ESP8266](https://github.com/plishman/Catholic-Lectionary-on-ESP8266) - The Roman Catholic Lectionary, Liturgical Calendar and Feast Days on ESP8266 with Waveshare 2.7" or 4.2" red/black display, generic SD card reader and DS3231 clock IC.
 - ![Monkey C](https://img.shields.io/badge/language-Monkey%20C-gray) [GarminRosary](https://github.com/DevMc120/GarminRosary) - Standalone, fully offline Rosary companion app for Garmin smartwatches.
-
-## Neovim
-
-- ![Lua](https://img.shields.io/badge/language-Lua-navy) [Lectio.nvim](https://github.com/ngorden/lectio.nvim) - Neovim plugin to practice lectio divina
 
 ## Related-Awesome-Lists
 
