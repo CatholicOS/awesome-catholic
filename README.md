@@ -89,7 +89,7 @@ A curated list of Catholic projects, libraries, software and websites.
 
 ## AI Tools
 
-- [Magisterium AI](https://www.magisterium.com/) - Magisterium AI taps into a vast database of Church documents utilizing advanced tools to deliver trustworthy answers rooted in Catholic tradition and the Catholic Church's teachings.
+- [Magisterium AI](https://www.magisterium.com/) - Magisterium AI taps into a vast database of Church documents utilizing advanced tools to deliver trustworthy answers rooted in Catholic tradition and the Catholic Church's teachings. By Longbeard.
 - [Truthly](https://truthly.ai/) - Catholic AI app designed to empower people with instant, reliable Catholic answers to questions about the faith and life.
 - [Homily.build](https://homily.build/) - The comprehensive platform for Catholic preachers to create contextual, high-quality homilies efficiently across different audiences and settings.
 - [SpiriTools](https://github.com/adicatho/spiritools) - An open-source, fully offline AI theological assistant for Catholics (by ADIC), grounded in Scripture, scholastic theology and magisterial texts — the digital successor to Ictus Win / Biblia Clerus.
@@ -100,7 +100,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [QUMRAN NET](https://www.qumran2.net/) - online database of materials for Catholic pastoral care in Italian. By Associazione Qumran.
 - [Cathopedia](https://it.cathopedia.org/) - An Italian Catholic wiki presenting the faith in a pastoral tone, faithful to the Magisterium.
 - [Santi e beati](https://www.santiebeati.it/) - A website about saints and martyrs. By Francesco Diani.
-- [GCatholic.org](https://gcatholic.org/) - A website with a slew of information about the Catholic Church and its institutions, hierarchy, liturgy, etc.
+- [GCatholic.org](https://gcatholic.org/) - A website with a slew of information about the Catholic Church and its institutions, hierarchy, liturgy, etc. By Gabriel Chow.
 - [Catholic Resources](https://catholic-resources.org/) - contains a variety of materials, mostly related to biblical and liturgical studies,
 intended for scholars, teachers, students, pastors, believers, seekers, and others interested in the Catholic faith. By Felix Just, S.J.
 - [Siti Cattolici](https://www.siticattolici.it/) - contains information about Catholic websites in Italy
