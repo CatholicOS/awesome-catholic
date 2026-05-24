@@ -86,6 +86,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - ![TypeScript](https://img.shields.io/badge/language-TypeScript-blue) [London Confessions](https://github.com/sf17490/london-confessions) - A web app listing Roman Catholic confession times in Central London (Zone 1).
 - ![HTML](https://img.shields.io/badge/language-HTML-green) [Index Librorum Prohibitorum](https://github.com/leozamboni/index-librorum-prohibitorum) - Web app to consult the historical Index of Forbidden Books.
 - ![Python](https://img.shields.io/badge/language-Python-blue) [biblos](https://github.com/dssjon/biblos) - Semantic Bible search and multi-layered analysis, incorporating the Church Fathers' commentaries for historical theological perspective. Demo at [biblos.app](https://www.biblos.app).
+- [OrarioSanteMesse](https://orariosantemesse.org/) - Mass times app for web, curated by volunteers of the Association Orariosantemesse and technical support from [Maestrale Group](https://www.maestrale.it/).
 
 ## AI Tools
 
@@ -176,7 +177,6 @@ Projects that appear no longer actively maintained (no commits in 3+ years) or w
 - ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) [Catholic Daily Readings](https://github.com/tbaba007/CatholicDaily) - Daily Mass Readings, Daily Catholic Prayers and Know your Faith. <!-- origin: Web-Apps -->
 - ![Python](https://img.shields.io/badge/language-Python-blue) [theocrone](https://github.com/paucazou/theochrone) - A calendar for the Tridentine rite. Demo at [theocrone.fr](http://theochrone.fr) <!-- origin: Web-Apps -->
 - ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) [Ember Days](https://github.com/saint-isidore-guild/ember-days) - Display the Ember Days for a given year. <!-- origin: Web-Apps -->
-- [OrarioSanteMesse](https://orariosantemesse.org/) - Mass times app for web, curated by volunteers of the Association Orariosantemesse and technical support from [Maestrale Group](https://www.maestrale.it/). <!-- origin: Web-Apps -->
 - ![CSS](https://img.shields.io/badge/language-CSS-purple) [Citation Generator](https://github.com/matefs/Citation-Generator) - Create quotes from Saints, the Bible or any based author. <!-- origin: Web-Apps -->
 - ![TypeScript](https://img.shields.io/badge/language-TypeScript-blue) [Pray the Rosary](https://github.com/marchiartur/pray-the-rosary) - A progressive web app designed to help Roman Catholics pray the Rosary. Demo at [prayrosary.netlify.app](https://prayrosary.netlify.app/) <!-- origin: Web-Apps -->
 - ![TypeScript](https://img.shields.io/badge/language-TypeScript-blue) [Catechism](https://github.com/nossbigg/catechism) -  The Catechism of the Catholic Church, modernised ⭐️⛪️ <!-- origin: Web-Apps -->

@@ -30,7 +30,6 @@ import json
 import os
 import re
 import sys
-import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -77,26 +76,6 @@ def primary(line):
     return "url:" + url.lower().rstrip("/"), name, url
 
 
-def site_unreachable(url):
-    """True only for hard connection failures (DNS/refused). Any HTTP response —
-    even 4xx/5xx — counts as reachable, and ambiguous TLS/timeout errors are not
-    flagged, to avoid false positives from bot-blocking or cert quirks."""
-    req = urllib.request.Request(url, method="HEAD")
-    req.add_header("User-Agent", "Mozilla/5.0 (awesome-catholic-audit)")
-    try:
-        urllib.request.urlopen(req, timeout=15)
-        return False
-    except urllib.error.HTTPError:
-        return False  # server responded; it's up
-    except urllib.error.URLError as exc:
-        reason = str(getattr(exc, "reason", "")).lower()
-        return any(s in reason for s in
-                   ("refused", "name or service", "nodename", "no route",
-                    "name resolution"))
-    except Exception:
-        return False
-
-
 def repo_status(ident):
     """Return (pushed: datetime|None, archived: bool, ok: bool)."""
     host, repo = ident.split(":", 1)
@@ -133,21 +112,22 @@ def detect(lines, months, revive_months):
     stale_cutoff = now - timedelta(days=int(months * 30.44))
     revive_cutoff = now - timedelta(days=int(revive_months * 30.44))
     section = None
-    to_attic, revive, flags, errors = {}, {}, [], 0
+    to_attic, revive, flags, errors, sites = {}, {}, [], 0, 0
     for line in lines:
         if line.startswith("## "):
             section = line[3:].strip()
             continue
         if not line.startswith("- "):
             continue
-        ident, name, url = primary(line)
+        ident, name, _ = primary(line)
         if not ident:
             continue
         if ident.startswith("url:"):
-            # Websites/apps are never auto-moved; only flag hard-unreachable
-            # ones for a human to look at.
-            if site_unreachable(url):
-                flags.append(f"{name}: link unreachable ({url}) — needs review")
+            # Websites/apps are not auto-checked: link reachability from the
+            # run environment is unreliable (sandboxed DNS/network), so it must
+            # not drive classification. They are curated by hand; we only count
+            # them here so they're acknowledged, not silently ignored.
+            sites += 1
             continue
         pushed, archived, ok = repo_status(ident)
         if not ok:
@@ -168,7 +148,7 @@ def detect(lines, months, revive_months):
                 to_attic[ident] = (section, name,
                                    "archived" if archived else
                                    (pushed.date().isoformat() if pushed else "?"))
-    return to_attic, revive, flags, errors
+    return to_attic, revive, flags, errors, sites
 
 
 def section_end(lines, section):
@@ -237,14 +217,15 @@ def main():
         sys.exit("error: set GH_TOKEN or GITHUB_TOKEN (GitHub API requires auth).")
 
     lines = args.readme.read_text(encoding="utf-8").split("\n")
-    to_attic, revive, flags, errors = detect(lines, args.months, args.revive_months)
+    to_attic, revive, flags, errors, sites = detect(
+        lines, args.months, args.revive_months)
 
     if args.format == "json":
         print(json.dumps({
             "to_attic": {k: {"from": v[0], "name": v[1], "last": v[2]}
                          for k, v in to_attic.items()},
             "revive": {k: {"to": v[0], "name": v[1]} for k, v in revive.items()},
-            "flags": flags, "check_errors": errors,
+            "flags": flags, "check_errors": errors, "sites_unchecked": sites,
         }, indent=2))
     else:
         print(f"## Stale -> Attic ({len(to_attic)})")
@@ -257,8 +238,9 @@ def main():
             print(f"\n## Flagged for manual review ({len(flags)})")
             for f in flags:
                 print(f"  - {f}")
+        print(f"\n{sites} website/app entries not auto-checked (curate by hand).")
         if errors:
-            print(f"\n{errors} repo check(s) failed.")
+            print(f"{errors} repo check(s) failed.")
 
     if args.apply:
         new = apply_moves(lines, to_attic, revive)

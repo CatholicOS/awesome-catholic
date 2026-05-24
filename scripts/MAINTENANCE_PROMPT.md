@@ -35,9 +35,10 @@ add or remove any. Work conservatively and open at most one PR.
    - **Use judgment.** If a stale entry is a canonical reference that belongs in
      the main list despite inactivity, revert that one move by hand. If a revived
      entry's recorded origin section no longer fits, place it in the better one.
-   - **Websites/apps are never auto-moved** (liveness checks are unreliable). The
-     report *flags* unreachable sites — mention them in the PR for a human to
-     check; do not move them yourself.
+   - **Websites/apps are never auto-moved or auto-checked.** Link reachability
+     from this environment is unreliable (sandboxed DNS/network — a live site can
+     look dead), so it must not drive any move. The report only *counts* them;
+     leave site curation to humans.
 
 5. **Open one PR** from a `maintenance/YYYY-MM-DD` branch. The body must list each
    move with its direction, the entry name, its last-activity date, and the

@@ -83,8 +83,9 @@ Keeps the list current by moving entries between the active sections and the
   (default 12). The gap between the two windows is **hysteresis** — it stops
   entries near the threshold from flapping in and out each run.
 - Attic moves record an `<!-- origin: <Section> -->` marker so revival is
-  deterministic. Websites/apps are only *flagged*, never auto-moved (liveness
-  checks false-negative on bot-blocking sites).
+  deterministic. Websites/apps are neither moved nor liveness-checked —
+  reachability from the run environment is unreliable (sandboxed DNS can make a
+  live site look dead), so they're only counted and curated by hand.
 
 ## Scheduled agents
 
