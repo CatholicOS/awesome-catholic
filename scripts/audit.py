@@ -30,6 +30,7 @@ import json
 import os
 import re
 import sys
+import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -63,17 +64,37 @@ def api_get(url):
 
 
 def primary(line):
-    """Return (identifier, name) for the entry's main link, badges stripped."""
+    """Return (identifier, name, url) for the entry's main link, badges stripped."""
     m = LINK.search(IMG.sub("", line[2:]))
     if not m:
-        return None, None
+        return None, None, None
     name, url = m.group(1), m.group(2)
     g, c = GH.search(url), CB.search(url)
     if g:
-        return "gh:" + g.group(1).removesuffix(".git").lower(), name
+        return "gh:" + g.group(1).removesuffix(".git").lower(), name, url
     if c:
-        return "cb:" + c.group(1).removesuffix(".git").lower(), name
-    return "url:" + url.lower().rstrip("/"), name
+        return "cb:" + c.group(1).removesuffix(".git").lower(), name, url
+    return "url:" + url.lower().rstrip("/"), name, url
+
+
+def site_unreachable(url):
+    """True only for hard connection failures (DNS/refused). Any HTTP response —
+    even 4xx/5xx — counts as reachable, and ambiguous TLS/timeout errors are not
+    flagged, to avoid false positives from bot-blocking or cert quirks."""
+    req = urllib.request.Request(url, method="HEAD")
+    req.add_header("User-Agent", "Mozilla/5.0 (awesome-catholic-audit)")
+    try:
+        urllib.request.urlopen(req, timeout=15)
+        return False
+    except urllib.error.HTTPError:
+        return False  # server responded; it's up
+    except urllib.error.URLError as exc:
+        reason = str(getattr(exc, "reason", "")).lower()
+        return any(s in reason for s in
+                   ("refused", "name or service", "nodename", "no route",
+                    "name resolution"))
+    except Exception:
+        return False
 
 
 def repo_status(ident):
@@ -115,13 +136,18 @@ def detect(lines, months, revive_months):
     to_attic, revive, flags, errors = {}, {}, [], 0
     for line in lines:
         if line.startswith("## "):
-            section = line[3:].strip(); continue
+            section = line[3:].strip()
+            continue
         if not line.startswith("- "):
             continue
-        ident, name = primary(line)
+        ident, name, url = primary(line)
         if not ident:
             continue
-        if ident.startswith("url:"):  # website / app — report only
+        if ident.startswith("url:"):
+            # Websites/apps are never auto-moved; only flag hard-unreachable
+            # ones for a human to look at.
+            if site_unreachable(url):
+                flags.append(f"{name}: link unreachable ({url}) — needs review")
             continue
         pushed, archived, ok = repo_status(ident)
         if not ok:
@@ -147,8 +173,8 @@ def detect(lines, months, revive_months):
 
 def section_end(lines, section):
     """Index just past the last content line of ``section`` (insertion point)."""
-    start = next((i for i, l in enumerate(lines)
-                  if l.startswith("## ") and l[3:].strip() == section), None)
+    start = next((i for i, row in enumerate(lines)
+                  if row.startswith("## ") and row[3:].strip() == section), None)
     if start is None:
         return None
     i = start + 1
@@ -166,14 +192,18 @@ def apply_moves(lines, to_attic, revive):
     section = None
     for line in lines:
         if line.startswith("## "):
-            section = line[3:].strip(); kept.append(line); continue
+            section = line[3:].strip()
+            kept.append(line)
+            continue
         if line.startswith("- "):
-            ident, _ = primary(line)
+            ident, _, _ = primary(line)
             if section != ATTIC and ident in to_attic:
-                moved_attic.append(add_origin(line, section)); continue
+                moved_attic.append(add_origin(line, section))
+                continue
             if section == ATTIC and ident in revive:
                 origin = revive[ident][0]
-                moved_back.setdefault(origin, []).append(strip_origin(line)); continue
+                moved_back.setdefault(origin, []).append(strip_origin(line))
+                continue
         kept.append(line)
 
     lines = kept
