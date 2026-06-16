@@ -131,6 +131,7 @@ A curated list of Catholic projects, libraries, software and websites.
 ## Websites
 
 - [QUMRAN NET](https://www.qumran2.net/) - online database of materials for Catholic pastoral care in Italian. By Associazione Qumran.
+- [Wikitolica](https://www.wikitolica.com/) - A Spanish Catholic encyclopedia with more than 4000 articles, faithful to the Magisterium.
 - [Cathopedia](https://it.cathopedia.org/) - An Italian Catholic wiki presenting the faith in a pastoral tone, faithful to the Magisterium.
 - [Santi e beati](https://www.santiebeati.it/) - A website about saints and martyrs. By Francesco Diani.
 - [GCatholic.org](https://gcatholic.org/) - A website with a slew of information about the Catholic Church and its institutions, hierarchy, liturgy, etc. By Gabriel Chow.
