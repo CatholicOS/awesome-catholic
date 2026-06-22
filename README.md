@@ -211,6 +211,7 @@ Projects that are Christian or broadly faith-related but not specifically Cathol
 - ![CSS](https://img.shields.io/badge/language-CSS-purple) ![⭐](https://img.shields.io/github/stars/rat9615/random-bible-verses?label=%E2%AD%90) [random-bible-verses](https://github.com/rat9615/random-bible-verses/) - Requests and displays random passages from a Bible api. By Rohan R.
 - ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) ![⭐](https://img.shields.io/github/stars/ngorden/christian-fortune?label=%E2%AD%90) [christian-fortune](https://github.com/ngorden/christian-fortune) - Classic `fortune` command, with a Christian twist. By Nicholas Gorden.
 - [BibleGPT](https://biblegpt-la.com/) - An AI-powered Bible app for iOS and Android, curated by [Mount Olive Academy](https://mountoliveacademy.org/) (non-denominational, so not specifically Catholic).
+- [Called](https://called.app/) - A church community and discipleship platform built for ministry leaders, bringing chat, events, news, and prayer requests into one [app](https://apps.apple.com/us/app/called-grow-disciples/id6445821834) with built-in safety and moderation tools for ministering to both minors and adults. Broadly Christian rather than specifically Catholic, but offers dedicated support for Catholic ministries, including an integration with [Newman Connection](https://newmanconnection.com/) for Catholic campus ministry. Closed-source.
 
 ## Attic
 
