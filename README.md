@@ -59,6 +59,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [Evangelizo](https://www.evangelizo.org/) - provides the daily Gospel readings, prayers, and information about saints online and through an app. Available in many different languages.
 - [Holy Habits](https://holyhabits.app/) - offers a simple and intuitive way to build habits that actually lead you closer to God, individually, or with friends.
 - [Biblia Matos Soares](https://play.google.com/store/apps/details?id=br.com.hansmboron.biblia_ms&pcampaignid=web_share) - Android app of Fr. Manuel de Matos Soares's classic 1956 Portuguese translation of the Bible.
+- [Called](https://called.app/) - A discipleship and community platform built for Catholic ministry leaders, bringing chat, events, news, and prayer requests into one [app](https://apps.apple.com/us/app/called-grow-disciples/id6445821834) with built-in safety and moderation tools for ministering to both minors and adults, and integrating with Newman Connection for Catholic campus ministry. By [Newman Ministry](https://newmanministry.com/).
 
 ## Mobile-Apps
 
