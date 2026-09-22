@@ -72,7 +72,6 @@ A curated list of Catholic projects, libraries, software and websites.
 
 ## Mobile-Apps
 - [Catholic Daily](https://www.catholicdaily.app) - Free liturgical calendar (web EN/ES/PT with regional calendars) and iOS Home/Lock Screen widgets for daily Gospel, feast days, and fasting reminders. [App Store](https://apps.apple.com/app/id6759089367). By Dinh Khang / Bible Widgets
-- 
 - ![Kotlin](https://img.shields.io/badge/language-Kotlin-purple) ![⭐](https://img.shields.io/github/stars/tristinbaker/DeFide?label=%E2%AD%90) [DeFide](https://github.com/tristinbaker/DeFide) - FOSS Catholic Android app with the Douay-Rheims and Vulgate Bible, guided Rosary, traditional prayers, and a novena tracker. By Tristin Baker.
 - ![Dart](https://img.shields.io/badge/language-Dart-lightblue) ![⭐](https://img.shields.io/github/stars/nathanael-h/aelf-flutter?label=%E2%AD%90) [aelf-flutter](https://github.com/nathanael-h/aelf-flutter) - Flutter app for the French Catholic AELF daily readings and liturgy, with offline support. By Nathanaël.
 - ![Vue](https://img.shields.io/badge/language-Vue-green) ![⭐](https://img.shields.io/gitea/stars/jozo/prayer-book?gitea_url=https%3A%2F%2Fcodeberg.org&label=%E2%AD%90) [Prayer Book](https://codeberg.org/jozo/prayer-book) - mobile app with catholic prayers
@@ -93,7 +92,7 @@ A curated list of Catholic projects, libraries, software and websites.
 
 ## Web-Apps
 - [Catholic Daily](https://www.catholicdaily.app) - Free liturgical calendar for the Roman rite (EN/ES/PT, regional calendars), companion to the iOS widgets app.
- - ![HTML](https://img.shields.io/badge/language-HTML-green) ![⭐](https://img.shields.io/github/stars/DivinumOfficium/divinum-officium?label=%E2%AD%90) [divinum-officium](https://github.com/DivinumOfficium/divinum-officium) - Traditional Roman Missal and Breviary Texts.
+- ![HTML](https://img.shields.io/badge/language-HTML-green) ![⭐](https://img.shields.io/github/stars/DivinumOfficium/divinum-officium?label=%E2%AD%90) [divinum-officium](https://github.com/DivinumOfficium/divinum-officium) - Traditional Roman Missal and Breviary Texts.
 - ![Python](https://img.shields.io/badge/language-Python-blue) ![⭐](https://img.shields.io/github/stars/dssjon/biblos?label=%E2%AD%90) [biblos](https://github.com/dssjon/biblos) - Semantic Bible search and multi-layered analysis, incorporating the Church Fathers' commentaries for historical theological perspective. Demo at [biblos.app](https://www.biblos.app). By Jon Boldt.
 - ![Python](https://img.shields.io/badge/language-Python-blue) ![⭐](https://img.shields.io/github/stars/mmolenda/missalemeum?label=%E2%AD%90) [Missale Meum](https://github.com/mmolenda/missalemeum) - 1962 Roman Catholic Missal for the Traditional Latin Mass. By Marcin Molenda.
 - ![C++](https://img.shields.io/badge/language-C++-pink) ![⭐](https://img.shields.io/github/stars/breviar-sk/Liturgia-hodin-online?label=%E2%AD%90) [Liturgia Hodín Online](https://github.com/breviar-sk/Liturgia-hodin-online) - Online Breviary (Liturgy of the Hours) in Slovak, Czech, Hungarian, Latin and Icelandic, running since 2011, with companion mobile apps. By Juraj Vidéky.
