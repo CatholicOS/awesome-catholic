@@ -71,7 +71,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [Called](https://called.app/) - A discipleship and community platform built for Catholic ministry leaders, bringing chat, events, news, and prayer requests into one [app](https://apps.apple.com/us/app/called-grow-disciples/id6445821834) with built-in safety and moderation tools for ministering to both minors and adults, and integrating with Newman Connection for Catholic campus ministry. By [Newman Ministry](https://newmanministry.com/).
 
 ## Mobile-Apps
-
+- [Catholic Daily](https://www.catholicdaily.app) - Free liturgical calendar (web EN/ES/PT with regional calendars) and iOS Home/Lock Screen widgets for daily Gospel, feast days, and fasting reminders. [App Store](https://apps.apple.com/app/id6759089367). By Khang Dinh.
 - ![Kotlin](https://img.shields.io/badge/language-Kotlin-purple) ![⭐](https://img.shields.io/github/stars/tristinbaker/DeFide?label=%E2%AD%90) [DeFide](https://github.com/tristinbaker/DeFide) - FOSS Catholic Android app with the Douay-Rheims and Vulgate Bible, guided Rosary, traditional prayers, and a novena tracker. By Tristin Baker.
 - ![Dart](https://img.shields.io/badge/language-Dart-lightblue) ![⭐](https://img.shields.io/github/stars/nathanael-h/aelf-flutter?label=%E2%AD%90) [aelf-flutter](https://github.com/nathanael-h/aelf-flutter) - Flutter app for the French Catholic AELF daily readings and liturgy, with offline support. By Nathanaël.
 - ![Vue](https://img.shields.io/badge/language-Vue-green) ![⭐](https://img.shields.io/gitea/stars/jozo/prayer-book?gitea_url=https%3A%2F%2Fcodeberg.org&label=%E2%AD%90) [Prayer Book](https://codeberg.org/jozo/prayer-book) - mobile app with catholic prayers
@@ -91,7 +91,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [The Little Office](https://apps.apple.com/us/app/the-little-office/id6746760526) - The Little Office of the Blessed Virgin Mary for iOS.
 
 ## Web-Apps
-
+- [Catholic Daily](https://www.catholicdaily.app/en/liturgical-calendar/2027) - Free liturgical calendar for the Roman rite (EN/ES/PT, regional calendars), companion to the iOS widgets app.
 - ![HTML](https://img.shields.io/badge/language-HTML-green) ![⭐](https://img.shields.io/github/stars/DivinumOfficium/divinum-officium?label=%E2%AD%90) [divinum-officium](https://github.com/DivinumOfficium/divinum-officium) - Traditional Roman Missal and Breviary Texts.
 - ![Python](https://img.shields.io/badge/language-Python-blue) ![⭐](https://img.shields.io/github/stars/dssjon/biblos?label=%E2%AD%90) [biblos](https://github.com/dssjon/biblos) - Semantic Bible search and multi-layered analysis, incorporating the Church Fathers' commentaries for historical theological perspective. Demo at [biblos.app](https://www.biblos.app). By Jon Boldt.
 - ![Python](https://img.shields.io/badge/language-Python-blue) ![⭐](https://img.shields.io/github/stars/mmolenda/missalemeum?label=%E2%AD%90) [Missale Meum](https://github.com/mmolenda/missalemeum) - 1962 Roman Catholic Missal for the Traditional Latin Mass. By Marcin Molenda.
