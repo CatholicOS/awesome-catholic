@@ -89,6 +89,7 @@ A curated list of Catholic projects, libraries, software and websites.
 - [Universalis](https://universalis.com/) - daily Liturgy of the Hours with apps for [Android](https://universalis.com/n-android.htm), [iPhone/iPad](https://universalis.com/n-ios.htm), [MacOS](https://universalis.com/n-mac.htm), and [Windows](https://universalis.com/n-windows.htm). By Universalis Publishing Ltd.
 - [Hallow](https://hallow.com/) - A Catholic prayer app for iOS and Android.
 - [The Little Office](https://apps.apple.com/us/app/the-little-office/id6746760526) - The Little Office of the Blessed Virgin Mary for iOS.
+- [Catholic Daily](https://www.catholicdaily.app) - Free Roman rite liturgical calendar with a [web version](https://www.catholicdaily.app/en/liturgical-calendar) (EN/ES/PT, regional calendars) and iOS Home/Lock Screen widgets for the daily Gospel, feast days, and fasting reminders. [App Store](https://apps.apple.com/app/id6759089367). By Khang Dinh.
 
 ## Web-Apps
 
