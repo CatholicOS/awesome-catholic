@@ -240,6 +240,8 @@ Projects that are Christian or broadly faith-related but not specifically Cathol
 - ![CSS](https://img.shields.io/badge/language-CSS-purple) ![⭐](https://img.shields.io/github/stars/rat9615/random-bible-verses?label=%E2%AD%90) [random-bible-verses](https://github.com/rat9615/random-bible-verses/) - Requests and displays random passages from a Bible api. By Rohan R.
 - ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) ![⭐](https://img.shields.io/github/stars/ngorden/christian-fortune?label=%E2%AD%90) [christian-fortune](https://github.com/ngorden/christian-fortune) - Classic `fortune` command, with a Christian twist. By Nicholas Gorden.
 - [BibleGPT](https://biblegpt-la.com/) - An AI-powered Bible app for iOS and Android, curated by [Mount Olive Academy](https://mountoliveacademy.org/) (non-denominational, so not specifically Catholic).
+- ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) [First Light Community](https://github.com/vvchen1981-del/first-light-community) - English and Chinese Bible reader with guides to biblical paintings, historical context, and introductory lessons. Uses 66-book Bible editions. [Try the web app](https://vvchen1981-del.github.io/first-light-community/?lang=en#art/moses).
+
 
 ## Attic
 
