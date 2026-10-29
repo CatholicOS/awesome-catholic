@@ -150,7 +150,6 @@ A curated list of Catholic projects, libraries, software and websites.
 - ![Python](https://img.shields.io/badge/language-Python-blue) ![⭐](https://img.shields.io/github/stars/casperdcl/brace?label=%E2%AD%90) [brace](https://github.com/casperdcl/brace) - Bible retrieval-augmented generation (RAG) tool grounded in the RSVCE Catholic edition, answering scriptural questions with Bible citations users should verify. Live at [brace.cdcl.ml](https://brace.cdcl.ml). By Casper da Costa-Luis.
 - [Magisterium AI](https://www.magisterium.com/) - Magisterium AI taps into a vast database of Church documents utilizing advanced tools to deliver trustworthy answers rooted in Catholic tradition and the Catholic Church's teachings. By Longbeard.
 - [Truthly](https://truthly.ai/) - Catholic AI app designed to empower people with instant, reliable Catholic answers to questions about the faith and life.
-- [Homily.build](https://homily.build/) - The comprehensive platform for Catholic preachers to create contextual, high-quality homilies efficiently across different audiences and settings.
 - [Catholic AI](https://www.catholicai.app/) - AI app by Cristian Augustine offering answers rooted in Catholic teaching, fine-tuned on Catholic sources (Aquinas's Catena Aurea, the Church Fathers, the Catechism), with Bible chat, commentary, and Rosary guides.
 
 ## Websites
